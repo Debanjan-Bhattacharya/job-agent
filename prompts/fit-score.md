@@ -17,6 +17,7 @@ Return exactly this shape:
 {
   "overall_score": <integer 0–100>,
   "experience_tier": "<grad|mid|mid-senior|senior>",
+  "relevant_years_experience": <integer 0–N>,
   "dimensions": {
     "skills_match": {
       "score": <integer 0–100>,
@@ -156,8 +157,10 @@ If years of experience cannot be determined from the profile and no override is 
 ### experience_match
 
 1. Compare total years of relevant experience against the JD requirement.
-2. If the JD states no explicit years requirement, infer a reasonable range from the seniority level of the role.
-3. Completely irrelevant prior experience (e.g. candidate spent 8 of 10 years in an unrelated domain) reduces effective years accordingly.
+2. Before scoring, calculate `relevant_years_experience` by excluding roles where the function, domain, or seniority level is clearly unrelated to the JD. For example: a QA engineer role excluded when scoring a Product Manager JD; a blue-collar role excluded when scoring a software engineering JD. Use `relevant_years_experience` (not `total_years_experience`) for all `experience_match` scoring and for tier classification in this scoring context. Emit `relevant_years_experience` as a top-level integer field in the output.
+3. If the JD states no explicit years requirement, infer a reasonable range from the seniority level of the role.
+4. Completely irrelevant prior experience (e.g. candidate spent 8 of 10 years in an unrelated domain) reduces effective years accordingly.
+5. Use `relevant_years_experience` when applying the deduction ladder (within ±1 yr of the JD range: full credit; outside by 2–3 yrs: deduct 15; outside by 4+ yrs: deduct 30).
 
 ### seniority_alignment
 
