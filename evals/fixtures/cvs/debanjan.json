@@ -1,0 +1,176 @@
+{
+  "name": "Debanjan Bhattacharya",
+  "email": "debanjan.b123@gmail.com",
+  "phone": "+917980296166",
+  "skills": [
+    {
+      "name": "Product Vision",
+      "years": 0
+    },
+    {
+      "name": "Product Strategy",
+      "years": 0
+    },
+    {
+      "name": "Stakeholder Management",
+      "years": 0
+    },
+    {
+      "name": "User-centric Approach",
+      "years": 0
+    },
+    {
+      "name": "Roadmap",
+      "years": 0
+    },
+    {
+      "name": "Data-driven Decision Making",
+      "years": 0
+    },
+    {
+      "name": "Key Success Metrics",
+      "years": 0
+    },
+    {
+      "name": "Backlog Management",
+      "years": 0
+    },
+    {
+      "name": "Product Lifecycle Management",
+      "years": 0
+    },
+    {
+      "name": "ROI Analysis",
+      "years": 0
+    },
+    {
+      "name": "Competitive Analysis",
+      "years": 0
+    },
+    {
+      "name": "Agile",
+      "years": 0
+    },
+    {
+      "name": "User Stories",
+      "years": 0
+    },
+    {
+      "name": "KPI Dashboards",
+      "years": 0
+    },
+    {
+      "name": "SEO",
+      "years": 0
+    },
+    {
+      "name": "A/B Testing",
+      "years": 0
+    },
+    {
+      "name": "CRM Integration",
+      "years": 0
+    },
+    {
+      "name": "AgentAI",
+      "years": 0
+    },
+    {
+      "name": "LLM pipelines",
+      "years": 0
+    },
+    {
+      "name": "Mixpanel",
+      "years": 0
+    },
+    {
+      "name": "Fullstory",
+      "years": 0
+    },
+    {
+      "name": "Google Analytics",
+      "years": 0
+    },
+    {
+      "name": "SQL",
+      "years": 0
+    },
+    {
+      "name": "Excel",
+      "years": 0
+    },
+    {
+      "name": "Power BI",
+      "years": 0
+    },
+    {
+      "name": "JIRA",
+      "years": 0
+    },
+    {
+      "name": "Confluence",
+      "years": 0
+    },
+    {
+      "name": "Figma",
+      "years": 0
+    },
+    {
+      "name": "Clevertap",
+      "years": 0
+    },
+    {
+      "name": "Tableau",
+      "years": 0
+    }
+  ],
+  "location": "India",
+  "education": [
+    {
+      "year": 2020,
+      "degree": "Masters of Administration, Marketing",
+      "institution": "SBM, NMIMS"
+    },
+    {
+      "year": 2015,
+      "degree": "Bachelor of Engineering, Power Engineering",
+      "institution": "Jadavpur University"
+    }
+  ],
+  "experience": [
+    {
+      "end": "2025-06",
+      "start": "2021-10",
+      "title": "Product Manager, B2B2C E-commerce SaaS, North America",
+      "company": "Trader Interactive (Carsales.com.au)",
+      "industry": "E-commerce",
+      "description": "Transformed legacy dealer web stack into a scalable SaaS platform, drove 140% revenue growth. Launched LLM-powered SEO and AI tools, improving traffic and conversion rates."
+    },
+    {
+      "end": "2021-09",
+      "start": "2020-05",
+      "title": "Product Manager, Acquisition and User Experience",
+      "company": "CarWale",
+      "industry": "Consumer Internet",
+      "description": "Led SEO-driven content strategies, increased organic traffic by 20% and engagement metrics. Developed mobile app strategy, achieving significant user activation and lead conversion."
+    },
+    {
+      "end": "2018-05",
+      "start": "2016-04",
+      "title": "Assistant System Engineer",
+      "company": "Tata Consultancy Services",
+      "industry": "IT Services",
+      "description": "Led a QA team for Citibank's DCF platform, enhancing testing efficiency and ensuring on-time delivery of critical features."
+    }
+  ],
+  "achievements": [
+    "Contributed to 140% revenue growth across a 600+ dealer network.",
+    "1.8x increase in organic traffic through SEO enhancements.",
+    "60% adoption of advanced features, increasing ARPU by 55%.",
+    "Surpassed 1 million page views for Mobility Outlook within 8 months.",
+    "test 2"
+  ],
+  "experience_tier": "mid-senior",
+  "total_years_experience": 9,
+  "experience_tier_override": null
+}

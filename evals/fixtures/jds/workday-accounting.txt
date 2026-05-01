@@ -1,0 +1,27 @@
+Job description
+Experience: 3-8yrs
+Location: Noida / Bangalore / Pune / Hyderabad / Kochi / Trivandrum / Chennai / Coimbatore / Kolkata
+Role: Senior Consultant ( IC)
+Role & responsibilities
+
+Manage and maintain the Workday Accounting Hub (WAH) setup, including charts of accounts mapping, accounting rules, and posting logic.
+Create and maintain accounting transformations to support new business processes and entities.
+Oversee data flow between subledgers and the Workday Accounting Hub to ensure completeness and accuracy of accounting entries.
+Perform reconciliation between source system data and GL postings to identify discrepancies.
+Collaborate with IT and system owners to resolve integration issues promptly.
+Ensure all Workday accounting journals are posted and reconciled within the close timelines.
+Validate accounting entries for completeness, accuracy, and compliance with internal policies.
+Support accruals, reclassifications, and intercompany postings through Workday journals.
+Generate Workday financial reports and dashboards (Balance Sheet, P&L, Trial Balance) to support controllership and FP&A teams.
+Analyze journal posting trends, exceptions, and variances to ensure financial integrity.
+Support management with ad-hoc queries and audit requirements using Workday reporting tools.
+Participate in Workday releases, testing, and change requests related to Accounting Hub modules.
+Drive process improvements and automation of journal entries, allocations, and reconciliations within Workday.
+Partner with technology and global finance teams to streamline R2R processes and improve efficiency.
+Act as a subject matter expert (SME) for Workday accounting configurations and workflows.
+Provide training and guidance to finance users on Workday accounting functionalities and best practices.
+Preferred candidate profile
+
+Certification in key finance Data Analytics tool (e.g. KNIME and Alteryx) (Workday Financials Certification)
+Certification in Workday Integration Certification
+Technical Implementation Role: [Sr. Consultant](https://www.naukri.com/sr-dot-consultant-jobs) Industry Type: [Management Consulting](https://www.naukri.com/management-consulting-jobs) Department: [Consulting](https://www.naukri.com/consulting-jobs) Employment Type: Full Time, Permanent Role Category: Management Consulting Education UG: Any Graduate Key Skills Skills highlighted with ‘‘ are preferred keyskills

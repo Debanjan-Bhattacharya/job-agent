@@ -43,7 +43,7 @@ export default function ProfileCard({ profile, rawText }: Props) {
   }
 
   // ── experience ───────────────────────────────────────────────────────────
-  function updateExperience(i: number, field: keyof WorkExperience, value: string | null) {
+  function updateExperience(i: number, field: keyof WorkExperience, value: string | string[] | null) {
     setEdited(prev => {
       const experience = [...prev.experience];
       experience[i] = { ...experience[i], [field]: value };
@@ -55,9 +55,35 @@ export default function ProfileCard({ profile, rawText }: Props) {
       ...prev,
       experience: [
         ...prev.experience,
-        { title: '', company: '', industry: '', start: '', end: null, description: '' },
+        { title: '', company: '', industry: '', start: '', end: null, bullets: [] },
       ],
     }));
+  }
+  function updateBullet(expIdx: number, bulletIdx: number, value: string) {
+    setEdited(prev => {
+      const experience = [...prev.experience];
+      const bullets = [...experience[expIdx].bullets];
+      bullets[bulletIdx] = value;
+      experience[expIdx] = { ...experience[expIdx], bullets };
+      return { ...prev, experience };
+    });
+  }
+  function addBullet(expIdx: number) {
+    setEdited(prev => {
+      const experience = [...prev.experience];
+      experience[expIdx] = { ...experience[expIdx], bullets: [...experience[expIdx].bullets, ''] };
+      return { ...prev, experience };
+    });
+  }
+  function removeBullet(expIdx: number, bulletIdx: number) {
+    setEdited(prev => {
+      const experience = [...prev.experience];
+      experience[expIdx] = {
+        ...experience[expIdx],
+        bullets: experience[expIdx].bullets.filter((_, idx) => idx !== bulletIdx),
+      };
+      return { ...prev, experience };
+    });
   }
   function removeExperience(i: number) {
     setEdited(prev => ({ ...prev, experience: prev.experience.filter((_, idx) => idx !== i) }));
@@ -264,13 +290,27 @@ export default function ProfileCard({ profile, rawText }: Props) {
                   <input className={`${inputCls} w-28`} placeholder="Start YYYY-MM" value={exp.start} onChange={e => updateExperience(i, 'start', e.target.value)} />
                   <input className={`${inputCls} w-28`} placeholder="End (blank=now)" value={exp.end ?? ''} onChange={e => updateExperience(i, 'end', e.target.value || null)} />
                 </div>
-                <textarea
-                  rows={2}
-                  className={`${inputCls} w-full resize-none`}
-                  placeholder="Description"
-                  value={exp.description}
-                  onChange={e => updateExperience(i, 'description', e.target.value)}
-                />
+                <div className="space-y-1">
+                  {exp.bullets.map((bullet, j) => (
+                    <div key={j} className="flex items-center gap-1.5">
+                      <span className="text-gray-400 text-xs shrink-0">•</span>
+                      <input
+                        className={`${inputCls} flex-1`}
+                        placeholder="Bullet point"
+                        value={bullet}
+                        onChange={e => updateBullet(i, j, e.target.value)}
+                      />
+                      <button
+                        onClick={() => removeBullet(i, j)}
+                        className="text-red-400 hover:text-red-600 text-xs shrink-0"
+                      >✕</button>
+                    </div>
+                  ))}
+                  <button
+                    onClick={() => addBullet(i)}
+                    className="text-blue-600 hover:text-blue-800 text-xs"
+                  >+ Add bullet</button>
+                </div>
                 <button onClick={() => removeExperience(i)} className="text-red-400 hover:text-red-600 text-xs">Remove</button>
               </div>
             ))}
@@ -289,8 +329,14 @@ export default function ProfileCard({ profile, rawText }: Props) {
                 <div className="text-sm text-gray-500">
                   {exp.company}{exp.industry ? ` · ${exp.industry}` : ''}
                 </div>
-                {exp.description && (
-                  <p className="text-sm text-gray-600 mt-1">{exp.description}</p>
+                {exp.bullets?.length > 0 && (
+                  <ul className="mt-1 space-y-0.5">
+                    {exp.bullets.map((b, j) => (
+                      <li key={j} className="text-sm text-gray-600 flex items-start gap-1.5">
+                        <span className="mt-0.5 shrink-0">•</span>{b}
+                      </li>
+                    ))}
+                  </ul>
                 )}
               </div>
             ))}

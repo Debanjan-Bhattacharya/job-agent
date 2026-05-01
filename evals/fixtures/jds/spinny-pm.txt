@@ -1,0 +1,33 @@
+About the job
+
+Product Manager - Car Inspections
+
+Spinny is India’s most trusted full-stack platform for buying and selling cars - backed by marquee investors including Tiger Global, Accel, Elevation Capital, ADQ and Westbridge Capital. Our mission is simple but ambitious: to bring trust, transparency, and delight back into the used car buying experience. With operations across 80+ cities and over a million customers served, we’re now entering our next phase of growth - scaling our platform, deepening customer engagement, and expanding our product ecosystem to cut across the car ownership spectrum. If you’re passionate about building category-defining experiences, leading high-impact
+teams, and using technology to reimagine a traditional industry, you’ll feel right at home!
+We’re looking for passionate, collaborative, data-driven individuals to join our Product team. We are a team of tinkerers, builders, and dreamers working together to make car ownership accessible, simple, and delightful. In this role, you will work closely with the engineers, designers, and other business stakeholders to help build and improve products for our customers, employees, or partners.
+
+__About the Role__
+We are looking for a Product Manager to own and scale our Inspector App — a mission-critical internal product used daily by on-ground inspectors, evaluators, and workshop teams.
+This role sits at the intersection of product, operations, and business. You will work closely with field teams, operations, engineering, and business stakeholders to drive measurable improvements in inspection volume, turnaround time (TAT), productivity, cost, and quality. Additionally you will be responsible for making life easier for ground staff and enabling them to complete inspections faster, cheaper, and more accurately.
+If you enjoy building products enabling both internal employees and customers, solving messy operational problems, and driving impact through process+ tech, this role is for you.
+
+__What You’ll do__
+
+Own the end-to-end experience of on-ground inspectors across planning, allocation, execution, and closure of inspections.
+Build features that help inspectors complete more inspections per day with less friction.
+Improve productivity by enabling smarter job allocation (optimized routing, reduced idle time).
+Design systems and workflows to scale the number of inspections happening daily without compromising quality.
+Identify bottlenecks across the inspection lifecycle and solve them through product and process improvements.
+Help us price & procure cars more effectively with extremely accurate inspections.
+Own key metrics for the product and help define clear, measurable goals for the same
+Ideate and build the product roadmap and manage prioritization and tradeoffs
+Do user research to generate insights that feed into the roadmap
+Write product requirement documents and ensure clear communication between design, development, and business teams
+Monitor and measure the impact of the features being delivered and do course corrections as needed
+__Who you are__
+
+B.Tech/B.E and MBA/PGDM from a Tier I institute preferred
+3-5 years of product management or related experience in an agile development environment
+Excellent problem solving and analytical abilities
+Strong interpersonal and communication skills
+Understand technology and be willing to learn and get your hands dirty where you don't

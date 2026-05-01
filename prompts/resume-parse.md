@@ -16,7 +16,7 @@ Return exactly this shape:
   "experience_tier": "",
   "experience_tier_override": null,
   "skills": [{ "name": "", "years": 0 }],
-  "experience": [{ "title": "", "company": "", "industry": "", "start": "", "end": null, "description": "" }],
+  "experience": [{ "title": "", "company": "", "industry": "", "start": "", "end": null, "bullets": [] }],
   "education": [{ "degree": "", "institution": "", "year": 0 }],
   "achievements": []
 }
@@ -38,7 +38,7 @@ Return exactly this shape:
   - `"senior"` — 15+ years
 - **experience_tier_override**: always `null`. Never set this to any other value.
 - **skills**: list of skills mentioned anywhere in the resume. `years` is the inferred number of years the candidate has used this skill, based on when it first appears in work history. Set `years` to 0 if it cannot be inferred. Do not duplicate skills.
-- **experience**: chronological list of work positions, most recent first. `industry` is the sector of the employer (e.g. "Fintech", "SaaS", "Healthcare"). `start` and `end` are formatted as `"YYYY-MM"` where possible, or `"YYYY"` if only the year is known. `end` is `null` for the current role. `description` is a concise summary of responsibilities and contributions at that role.
+- **experience**: chronological list of work positions, most recent first. `industry` is the sector of the employer (e.g. "Fintech", "SaaS", "Healthcare"). `start` and `end` are formatted as `"YYYY-MM"` where possible, or `"YYYY"` if only the year is known. `end` is `null` for the current role. `bullets`: extract each distinct responsibility, achievement, or contribution as a separate string in the array. Do not merge multiple points into one string. If the resume uses dash/bullet formatting, each dash-separated item becomes one array entry.
 - **education**: list of academic qualifications. `year` is the graduation year as an integer. Set to 0 if unknown.
 - **achievements**: list of notable quantified accomplishments extracted verbatim or closely paraphrased from the resume (e.g. `"Reduced API latency by 40%"`, `"Managed a team of 12 engineers"`). Include only achievements with clear, specific evidence. Return an empty array if none are found.
 
@@ -50,7 +50,7 @@ Return exactly this shape:
 - `experience_tier` must be exactly one of: `"grad"`, `"mid"`, `"mid-senior"`, `"senior"`.
 - `experience_tier_override` must always be `null`.
 - All string fields must be strings, never `null` — use `""` for missing strings.
-- `experience[].end` is the only field that may be `null` (current role) or a string (past role).
+- `experience[].end` is the only field that may be `null` (current role) or a string (past role). `experience[].bullets` must always be an array of strings — use `[]` if no detail is present.
 - `total_years_experience` and all `years` fields must be integers ≥ 0.
 - `skills`, `experience`, `education`, and `achievements` must be arrays (use `[]` if empty).
 - Never hallucinate. Only extract information explicitly present in the resume text. Do not infer employer names, dates, or skills that are not stated.

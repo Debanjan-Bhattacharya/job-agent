@@ -5,6 +5,8 @@ import { openai } from '@/lib/openai';
 import { supabase } from '@/lib/supabase';
 import { hashText } from '@/lib/hash';
 
+export const maxDuration = 60;
+
 const jdAnalysisPrompt = readFileSync(
   join(process.cwd(), 'prompts', 'jd-analysis.md'),
   'utf-8',

@@ -9,7 +9,7 @@ export interface WorkExperience {
   industry: string;
   start: string;
   end: string | null;
-  description: string;
+  bullets: string[];
 }
 
 export interface Education {
@@ -30,4 +30,11 @@ export interface ParsedProfile {
   experience: WorkExperience[];
   education: Education[];
   achievements: string[];
+  work_arrangement_preference?: 'wfh' | 'wfo' | 'hybrid' | 'any';
+  work_arrangement_hard_filter?: boolean;
+  career_break?: {
+    detected: boolean;
+    context?: string;
+  };
+  candidate_supplied_context?: Record<string, string>;
 }

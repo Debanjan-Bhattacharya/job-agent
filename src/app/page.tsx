@@ -5,6 +5,7 @@ import ResumeUpload from '@/components/ResumeUpload';
 import ProfileCard from '@/components/ProfileCard';
 import JDCard from '@/components/JDCard';
 import ScoreResult from '@/components/ScoreResult';
+import TailoredResumeView from '@/components/TailoredResumeView';
 import type { ParsedProfile } from '@/types/profile';
 import type { ParsedJD } from '@/types/jd';
 
@@ -18,6 +19,14 @@ export default function Home() {
   const [statusMsg, setStatusMsg] = useState('');
   const [error, setError] = useState('');
 
+  const [tailoredOutput, setTailoredOutput] = useState<Record<string, unknown> | null>(null);
+  const [validationResult, setValidationResult] = useState<Record<string, unknown> | null>(null);
+  const [tailoring, setTailoring] = useState(false);
+  const [tailoringStatus, setTailoringStatus] = useState('');
+  const [candidateSuppliedContext, setCandidateSuppliedContext] = useState<
+    Record<string, string>
+  >({});
+
   function handleParsed(p: ParsedProfile, text: string) {
     setProfile(p);
     setRawText(text);
@@ -28,6 +37,9 @@ export default function Home() {
     setError('');
     setResult(null);
     setParsedJD(null);
+    setTailoredOutput(null);
+    setValidationResult(null);
+    setCandidateSuppliedContext({});
 
     try {
       // Step 1 — parse the JD for JDCard display (best-effort, non-blocking)
@@ -63,6 +75,65 @@ export default function Home() {
     }
   }
 
+  async function handleTailor(suppliedContext: Record<string, string> = {}) {
+    if (!result || result.response_type !== 'match' || !profile) return;
+
+    setTailoring(true);
+    setError('');
+    setTailoredOutput(null);
+    setValidationResult(null);
+
+    try {
+      const jd_analysis = result.jd_analysis;
+      const cv_analysis = result.cv_analysis;
+      const match_scoring = Object.fromEntries(
+        Object.entries(result).filter(
+          ([k]) => !['jd_analysis', 'cv_analysis', 'response_type'].includes(k),
+        ),
+      );
+
+      setTailoringStatus('Tailoring resume…');
+      const tailorRes = await fetch('/api/resume/tailor', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          candidate_profile: profile,
+          jd_analysis,
+          cv_analysis,
+          match_scoring,
+          candidate_supplied_context: suppliedContext,
+        }),
+      });
+      if (tailorRes.status === 429) {
+        const err = (await tailorRes.json()) as { error: string };
+        throw new Error(err.error);
+      }
+      if (!tailorRes.ok) throw new Error('Tailoring failed');
+      const tailored: Record<string, unknown> = await tailorRes.json();
+      setTailoredOutput(tailored);
+
+      setTailoringStatus('Validating tailored resume…');
+      const validateRes = await fetch('/api/resume/validate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ original_profile: profile, tailored_output: tailored }),
+      });
+      if (!validateRes.ok) throw new Error('Validation failed');
+      const validation: Record<string, unknown> = await validateRes.json();
+      setValidationResult(validation);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Something went wrong. Please try again.');
+    } finally {
+      setTailoring(false);
+      setTailoringStatus('');
+    }
+  }
+
+  function handleReTailor(context: Record<string, string>) {
+    setCandidateSuppliedContext(context);
+    void handleTailor(context);
+  }
+
   const isMatch = result?.response_type === 'match';
 
   return (
@@ -71,7 +142,9 @@ export default function Home() {
 
         <div>
           <h1 className="text-3xl font-bold text-gray-900">Job Agent</h1>
-          <p className="text-gray-500 mt-1">Upload your resume, then paste a job description to score your fit.</p>
+          <p className="text-gray-500 mt-1">
+            Upload your resume, then paste a job description to score your fit.
+          </p>
         </div>
 
         {/* Resume */}
@@ -105,15 +178,44 @@ export default function Home() {
 
           {/* Score result */}
           {result && (
-            isMatch
-              ? <ScoreResult result={result} />
-              : (
-                <div className="p-4 bg-white border border-gray-200 rounded-lg">
-                  <pre className="text-xs text-gray-600 overflow-auto whitespace-pre-wrap">
-                    {JSON.stringify(result, null, 2)}
-                  </pre>
-                </div>
-              )
+            isMatch ? (
+              <ScoreResult result={result} />
+            ) : (
+              <div className="p-4 bg-white border border-gray-200 rounded-lg">
+                <pre className="text-xs text-gray-600 overflow-auto whitespace-pre-wrap">
+                  {JSON.stringify(result, null, 2)}
+                </pre>
+              </div>
+            )
+          )}
+
+          {/* Tailor button — shown after a successful match score */}
+          {isMatch && (
+            <button
+              onClick={() => void handleTailor(candidateSuppliedContext)}
+              disabled={tailoring}
+              className="w-full py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            >
+              {tailoring
+                ? tailoringStatus || 'Working…'
+                : tailoredOutput
+                ? 'Re-tailor Resume'
+                : 'Tailor My Resume'}
+            </button>
+          )}
+
+          {/* Tailored resume view */}
+          {tailoredOutput && validationResult && (
+            <div className="space-y-4">
+              <h2 className="text-lg font-semibold text-gray-800">Tailored Resume</h2>
+              <TailoredResumeView
+                tailoredOutput={tailoredOutput}
+                originalProfile={profile!}
+                validationResult={validationResult}
+                candidateSuppliedContext={candidateSuppliedContext}
+                onReTailor={handleReTailor}
+              />
+            </div>
           )}
         </section>
 

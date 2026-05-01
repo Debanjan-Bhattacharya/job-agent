@@ -5,6 +5,8 @@ import { openai } from '@/lib/openai';
 import { supabase } from '@/lib/supabase';
 import { hashText } from '@/lib/hash';
 
+export const maxDuration = 60;
+
 const jdAnalysisPrompt = readFileSync(
   join(process.cwd(), 'prompts', 'jd-analysis.md'),
   'utf-8',
@@ -126,6 +128,10 @@ export async function POST(req: NextRequest) {
     const match_score = JSON.parse(
       completion.choices[0].message.content ?? '{}',
     ) as Record<string, unknown>;
+
+    if (match_score.mandatory_gate_cap_applied === true && (match_score.overall_score as number) > 35) {
+      match_score.overall_score = 35;
+    }
 
     return NextResponse.json({
       response_type: 'match',

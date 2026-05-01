@@ -3,6 +3,8 @@ import { readFileSync } from 'fs';
 import { join } from 'path';
 import { openai } from '@/lib/openai';
 
+export const maxDuration = 60;
+
 const cvAnalysisPrompt = readFileSync(
   join(process.cwd(), 'prompts', 'cv-analysis.md'),
   'utf-8',

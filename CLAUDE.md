@@ -72,9 +72,42 @@ create table company_context_cache (
 );
 ```
 
+### Day 3 continued — Resume tailoring
+
+**New prompts:**
+- `prompts/resume-tailor.md` — five-input tailoring engine: rewrites experience bullets, skills, and professional summary using tier-appropriate tone register and domain vocabulary; produces gap_questions and pre_apply_flags
+- `prompts/resume-validate.md` — fabrication auditor: checks every tailored bullet against original profile; outputs `{ passed, fabrications_found, warnings, checked_bullets_count }`
+
+**New routes:**
+- `POST /api/resume/tailor` — accepts `{ candidate_profile, jd_analysis, cv_analysis, match_scoring, candidate_supplied_context? }`, validates all four required inputs, calls GPT-4o with resume-tailor.md, returns tailored output. Daily cap of 5/user/day (skipped while user_id is null)
+- `POST /api/resume/validate` — accepts `{ original_profile, tailored_output }`, calls GPT-4o with resume-validate.md, returns validation result
+
+**New component:**
+- `src/components/TailoredResumeView.tsx` — renders full tailoring output: validation banner (green/red), fabrication details, pre-apply flags (blocking red / advisory yellow), tailoring summary, side-by-side original/tailored experience with change tags and inline quantification prompt inputs, tailored skills (prioritised/deprioritised), professional summary before/after, gap questions form with re-tailor callback, Save + Download PDF (stubbed) buttons
+
+**Updated:**
+- `src/app/page.tsx` — "Tailor My Resume" / "Re-tailor Resume" button after match score; calls tailor then validate sequentially; renders TailoredResumeView; gap question answers fed back via onReTailor callback
+
+**Supabase table required:**
+```sql
+create table tailored_resumes (
+  id uuid default gen_random_uuid() primary key,
+  user_id uuid,
+  candidate_profile_id uuid references candidate_profiles(id),
+  jd_hash text,
+  tailored_output jsonb not null,
+  validation_result jsonb not null,
+  candidate_supplied_context jsonb,
+  created_at timestamptz default now() not null
+);
+```
+
+**Note:** PDF download button is stubbed (disabled) — to be wired in next task.
+
 ## What's next
 
 ### Day 4
+- PDF generation for tailored resume
 - Auth with Supabase (email magic-link)
 - Persist scores + JDs to Supabase
 - History page — list past scores for logged-in user

@@ -88,7 +88,8 @@ Return a single valid JSON object. No prose, markdown, or commentary outside the
     "days_per_week": 0,
     "shift": "",
     "weekend_required": false,
-    "travel_required": false
+    "travel_required": false,
+    "work_arrangement": "wfh|wfo|hybrid|unspecified"
   }
 }
 
@@ -136,7 +137,13 @@ Set dimension_weights based on half-life:
 - Exclude inactive categories from active_categories entirely — do not include with weight 0
 
 ### Mandatory Gates
-A mandatory gate is a requirement where absence makes the candidate fundamentally unqualified regardless of other strengths. Classify as mandatory_gate when JD uses language like: required, must have, mandatory, minimum qualification, essential.
+A mandatory gate is a requirement where absence makes the candidate fundamentally unqualified regardless of other strengths. Classify as mandatory_gate ONLY when JD uses explicit language: 'required', 'must have', 'mandatory', 'minimum qualification', 'essential', 'necessary'.
+NEVER classify as mandatory_gate when JD uses: 'preferred', 'preferred candidate', 'ideal candidate', 'good to have', 'nice to have', 'a plus', 'advantage', 'desirable'.
+When JD says 'preferred': classify as preferred_requirement only. Add to preferred_requirements array. Never add to mandatory_gates.
+Self-check before classifying any gate: copy the exact phrase from the JD that justifies this classification. If you cannot find an explicit mandatory phrase, it is not a gate.
+Example WRONG: '[qualification] from [institution type] preferred' → mandatory gate
+Example CORRECT: '[qualification] from [institution type] preferred' → preferred_requirement only
+Example CORRECT: '[qualification] required' → mandatory gate
 
 Examples:
 - "CA qualified" for a finance controller role
@@ -170,6 +177,12 @@ List JD requirements that cannot be evaluated from CV text alone:
 ### Work Schedule Requirements
 Extract explicitly if stated: 6-day week, shift timings, weekend requirement, travel requirement.
 If not stated: leave as defaults (0/empty/false).
+
+work_arrangement classification:
+- wfh: JD contains 'fully remote', 'work from home', 'remote only', or similar
+- wfo: JD contains 'on-site', 'work from office', or states a specific city location with no remote mention
+- hybrid: JD contains 'hybrid', states partial office days, or uses 'flexible working'
+- unspecified: no mention of work location either way — always default to unspecified, never infer
 
 ### Signals Array
 For each active category, list signals as concise strings extracted from JD.

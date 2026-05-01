@@ -169,7 +169,7 @@ reasoning must:
 - Never write generic statements
 
 ### Step 7: Cannot Assess + Candidate Inputs Needed
-cannot_assess_from_cv: carry forward from jd_analysis.cannot_assess_from_cv, add any additional gaps discovered during scoring
+cannot_assess_from_cv: carry forward from jd_analysis.cannot_assess_from_cv, add any additional gaps discovered during scoring. Work arrangement preference is a candidate filter — do not factor into any category score or overall score. Never penalise or reward based on work arrangement match or mismatch.
 
 candidate_inputs_needed: generate specific questions where candidate-supplied information would materially change the score:
 - Language fluency: "The JD requires Hindi and Marathi fluency — please confirm if you speak these"
