@@ -6,6 +6,7 @@ export type Assertion =
   | { type: 'field_not_present'; path: string }
   | { type: 'array_not_empty'; path: string }
   | { type: 'array_empty'; path: string }
+  | { type: 'object_not_empty'; path: string }
   | { type: 'string_not_contains'; path: string; forbidden: string }
   | { type: 'array_length_gte'; path: string; min: number }
   | { type: 'score_consistency'; runs: number; maxVariance: number; scorePath: string };
@@ -70,6 +71,17 @@ export function runAssertion(assertion: Assertion, data: Record<string, unknown>
         message: passed
           ? `✓ array_empty: ${assertion.path} is empty`
           : `✗ array_empty: ${assertion.path} has ${len === -1 ? 'non-array value' : `${len} item(s)`}: ${JSON.stringify(value)}`,
+      };
+    }
+
+    case 'object_not_empty': {
+      const value = _.get(data, assertion.path);
+      const passed = typeof value === 'object' && value !== null && !Array.isArray(value) && Object.keys(value).length > 0;
+      return {
+        passed,
+        message: passed
+          ? `✓ object_not_empty: ${assertion.path} has ${Object.keys(value as object).length} key(s)`
+          : `✗ object_not_empty: ${assertion.path} = ${JSON.stringify(value)}`,
       };
     }
 

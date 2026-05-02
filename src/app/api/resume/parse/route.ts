@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { readFileSync } from 'fs';
 import { join } from 'path';
-import { openai } from '@/lib/openai';
+import { openai, EXTRACTION_MODEL } from '@/lib/openai';
 import pdfParse from 'pdf-parse';
 
 const systemPrompt = readFileSync(
@@ -53,7 +53,7 @@ export async function POST(req: NextRequest) {
   }
 
   const completion = await openai.chat.completions.create({
-    model: 'gpt-4o',
+    model: EXTRACTION_MODEL,
     response_format: { type: 'json_object' },
     messages: [
       { role: 'system', content: systemPrompt },

@@ -5,7 +5,26 @@
       "Bash(npx tsc:*)",
       "Bash(npm run:*)",
       "Bash(mkdir:*)",
-      "Bash(timeout 10 npx ts-node:*)"
+      "Bash(timeout 10 npx ts-node:*)",
+      "Skill(claude-api)",
+      "Bash(timeout 30 bash -c 'until grep -q \"Ready\\\\|localhost:3000\" C:/Users/DELL/job-agent/dev-server.log 2>/dev/null; do sleep 2; done')",
+      "Bash(npm run *)",
+      "Read(//tmp/**)",
+      "Bash(break)",
+      "Bash(curl -s -X POST http://localhost:3002/api/score -H 'Content-Type: application/json' -d '{ *)",
+      "Bash(node *)",
+      "Bash(curl *)",
+      "Bash(npx ts-node *)",
+      "Bash(Get-Content \"C:\\\\Users\\\\DELL\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-DELL-job-agent\\\\0b416ad8-18c1-4463-bd3e-2798c0032127\\\\tasks\\\\b6mbybs99.output\" -Wait)",
+      "Bash(Select-String --line-buffered \"PASS|FAIL|Error|error|done|complete|Summary|passed|failed\")",
+      "Bash(bash -c 'f=\"C:/Users/DELL/AppData/Local/Temp/claude/C--Users-DELL-job-agent/0b416ad8-18c1-4463-bd3e-2798c0032127/tasks/b6mbybs99.output\"; until grep -qE \"PASS|FAIL|Summary|Error\" \"$f\" 2>/dev/null; do sleep 3; done; cat \"$f\"')",
+      "Bash(bash -c 'f=\"C:/Users/DELL/AppData/Local/Temp/claude/C--Users-DELL-job-agent/0b416ad8-18c1-4463-bd3e-2798c0032127/tasks/bhj3nctfy.output\"; until grep -qE \"PASS|FAIL|Summary|Error|Fatal\" \"$f\" 2>/dev/null; do sleep 5; done; tail -60 \"$f\"')",
+      "Bash(bash -c 'f=\"C:/Users/DELL/AppData/Local/Temp/claude/C--Users-DELL-job-agent/0b416ad8-18c1-4463-bd3e-2798c0032127/tasks/brq41a61w.output\"; until grep -qE \"PASS|FAIL|Summary|Error\" \"$f\" 2>/dev/null; do sleep 5; done; tail -30 \"$f\"')",
+      "Bash(bash -c 'f=\"C:/Users/DELL/AppData/Local/Temp/claude/C--Users-DELL-job-agent/0b416ad8-18c1-4463-bd3e-2798c0032127/tasks/bx7r1xnd9.output\"; until grep -qE \"PASS|FAIL|Summary\" \"$f\" 2>/dev/null; do sleep 5; done; tail -30 \"$f\"')",
+      "Bash(bash -c 'f=\"C:/Users/DELL/AppData/Local/Temp/claude/C--Users-DELL-job-agent/0b416ad8-18c1-4463-bd3e-2798c0032127/tasks/bqfqhxus6.output\"; until grep -qE \"PASS|FAIL|SUMMARY\" \"$f\" 2>/dev/null; do sleep 5; done; tail -25 \"$f\"')",
+      "Bash(bash -c 'f=\"C:/Users/DELL/AppData/Local/Temp/claude/C--Users-DELL-job-agent/0b416ad8-18c1-4463-bd3e-2798c0032127/tasks/bln1a933m.output\"; until grep -q \"EVAL SUMMARY\" \"$f\" 2>/dev/null; do sleep 10; done; tail -30 \"$f\"')",
+      "Bash(bash -c 'f=\"C:/Users/DELL/AppData/Local/Temp/claude/C--Users-DELL-job-agent/0b416ad8-18c1-4463-bd3e-2798c0032127/tasks/bkq0mnd7t.output\"; until grep -q \"EVAL SUMMARY\" \"$f\" 2>/dev/null; do sleep 15; done; tail -35 \"$f\"')",
+      "Bash(bash -c 'f=\"C:/Users/DELL/AppData/Local/Temp/claude/C--Users-DELL-job-agent/0b416ad8-18c1-4463-bd3e-2798c0032127/tasks/bfd61mcce.output\"; until grep -q \"EVAL SUMMARY\" \"$f\" 2>/dev/null; do sleep 15; done; tail -25 \"$f\"')"
     ]
   }
 }

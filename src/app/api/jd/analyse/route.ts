@@ -1,16 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { readFileSync } from 'fs';
 import { join } from 'path';
-import { openai } from '@/lib/openai';
+import { openai, EXTRACTION_MODEL } from '@/lib/openai';
 import { supabase } from '@/lib/supabase';
 import { hashText } from '@/lib/hash';
 
 export const maxDuration = 60;
-
-const jdAnalysisPrompt = readFileSync(
-  join(process.cwd(), 'prompts', 'jd-analysis.md'),
-  'utf-8',
-);
 
 const CACHE_TTL_HOURS = 24 * 30; // 30 days
 
@@ -20,7 +15,12 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'jd_text is required' }, { status: 400 });
   }
 
-  const jd_hash = hashText(jd_text);
+  const jdAnalysisPrompt = readFileSync(
+    join(process.cwd(), 'prompts', 'jd-analysis.md'),
+    'utf-8',
+  );
+  const promptHash = hashText(jdAnalysisPrompt).slice(0, 8);
+  const jd_hash = hashText(jd_text) + '_p' + promptHash;
 
   // Check jd_analysis_cache
   const { data: cached } = await supabase
@@ -57,7 +57,7 @@ export async function POST(req: NextRequest) {
     : `JOB DESCRIPTION:\n${jd_text}`;
 
   const completion = await openai.chat.completions.create({
-    model: 'gpt-4o',
+    model: EXTRACTION_MODEL,
     response_format: { type: 'json_object' },
     messages: [
       { role: 'system', content: jdAnalysisPrompt },

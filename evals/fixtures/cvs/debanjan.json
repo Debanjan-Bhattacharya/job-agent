@@ -144,7 +144,18 @@
       "title": "Product Manager, B2B2C E-commerce SaaS, North America",
       "company": "Trader Interactive (Carsales.com.au)",
       "industry": "E-commerce",
-      "description": "Transformed legacy dealer web stack into a scalable SaaS platform, drove 140% revenue growth. Launched LLM-powered SEO and AI tools, improving traffic and conversion rates."
+      "bullets": [
+        "Owned end-to-end product roadmap for a B2B2C SaaS platform serving 600+ dealers across North America",
+        "Transformed legacy dealer web stack into a scalable, multi-tenant SaaS platform, driving 140% revenue growth",
+        "Launched LLM-powered SEO tooling that delivered a 1.8x increase in organic traffic",
+        "Drove 60% adoption of advanced product features across dealer base, increasing ARPU by 55%",
+        "Surpassed 1 million page views for Mobility Outlook within 8 months of launch",
+        "Led cross-functional squads across engineering, design, and business using Agile methodologies",
+        "Built KPI dashboards and A/B testing frameworks to enable data-driven product decisions",
+        "Integrated AgentAI and LLM pipelines into dealer workflow automation, reducing manual effort",
+        "Maintained product backlog using JIRA and Confluence, aligning roadmap with business OKRs",
+        "Conducted competitive analysis and user research to inform SaaS pricing and packaging strategy"
+      ]
     },
     {
       "end": "2021-09",
@@ -152,7 +163,13 @@
       "title": "Product Manager, Acquisition and User Experience",
       "company": "CarWale",
       "industry": "Consumer Internet",
-      "description": "Led SEO-driven content strategies, increased organic traffic by 20% and engagement metrics. Developed mobile app strategy, achieving significant user activation and lead conversion."
+      "bullets": [
+        "Led SEO-driven content strategy that increased organic traffic by 20% and improved search rankings",
+        "Developed mobile app acquisition and UX strategy, achieving significant user activation and lead conversion gains",
+        "Collaborated with engineering and design teams to ship user-facing features on a 2-week sprint cadence",
+        "Analysed user behaviour using Mixpanel and Fullstory to identify drop-off points and drive UX improvements",
+        "Managed acquisition funnel metrics and ran A/B tests to optimise conversion rates"
+      ]
     },
     {
       "end": "2018-05",
@@ -160,7 +177,11 @@
       "title": "Assistant System Engineer",
       "company": "Tata Consultancy Services",
       "industry": "IT Services",
-      "description": "Led a QA team for Citibank's DCF platform, enhancing testing efficiency and ensuring on-time delivery of critical features."
+      "bullets": [
+        "Led QA team for Citibank's DCF platform, improving testing efficiency and ensuring on-time delivery",
+        "Designed and maintained regression test suites for critical banking features",
+        "Coordinated release cycles and defect tracking across development and operations teams"
+      ]
     }
   ],
   "achievements": [

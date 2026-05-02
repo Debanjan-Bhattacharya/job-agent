@@ -112,6 +112,40 @@ create table tailored_resumes (
 - Persist scores + JDs to Supabase
 - History page — list past scores for logged-in user
 
+## Session Log
+
+### 1 May 2026
+
+**What's built:**
+- Three-call scoring architecture live: `/api/jd/analyse`, `/api/cv/analyse`, `/api/score`
+- Resume tailoring flow: `/api/resume/tailor`, `/api/resume/validate`
+- `TailoredResumeView` component with side-by-side bullets, gap questions, pre-apply flags
+- Evals suite at `/evals/` — runs against localhost dev server via fetch
+- Supabase tables: `jd_analysis_cache`, `company_context_cache`, `tailored_resumes`
+- Prompts: `jd-analysis.md`, `cv-analysis.md`, `match-scoring.md`, `resume-tailor.md`, `resume-validate.md`
+
+**Model swap pending** — all routes currently on GPT-4o, to be replaced:
+- Extraction (resume parse, JD parse, CV analysis, validator): Gemini 2.5 Flash-Lite
+- Match scoring: Gemini 2.5 Pro
+- Resume tailoring + cover letter: Claude Sonnet 4.6
+- Requires: `GOOGLE_API_KEY` + `ANTHROPIC_API_KEY` in `.env.local`
+
+**Model swap complete (2 May 2026):**
+- Extraction routes (parse, jd/analyse, cv/analyse, validate): `gpt-5-nano` via `EXTRACTION_MODEL` constant in `src/lib/openai.ts`
+- Match scoring + resume tailoring: `claude-sonnet-4-6` via `src/lib/anthropic.ts`
+- Both Claude routes have try-catch — always return valid JSON, never crash the server
+- JD analysis prompt read per-request (inside handler) to prevent stale-prompt cache hits in dev
+
+**Evals current state:** 5/5 passing. Run with `npx ts-node evals/run-evals.ts` (dev server must be running on `:3000`)
+
+**Next session:**
+- Cover letter prompt + route
+- Auth with Supabase (email magic-link) + usage cap wired to real user_id
+- PDF generation for tailored resume
+- Persist scores + JDs to Supabase; history page
+
+---
+
 ## Conventions
 
 - `src/` directory with `@/*` import alias
@@ -119,5 +153,6 @@ create table tailored_resumes (
 - API routes live in `src/app/api/`
 - Shared clients in `src/lib/`
 - Prompts as Markdown files in `/prompts`
-- All LLM calls use `model: 'gpt-4o'` with `response_format: { type: 'json_object' }`
-- JD analysis results cached in Supabase by sha256 hash of JD text
+- Extraction calls: OpenAI `gpt-5-nano` with `response_format: { type: 'json_object' }`
+- Scoring/tailoring calls: Anthropic `claude-sonnet-4-6` via `anthropic.messages.create`
+- JD analysis results cached in Supabase by `sha256(jd_text) + '_p' + sha256(prompt)[0:8]`

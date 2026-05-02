@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { readFileSync } from 'fs';
 import { join } from 'path';
-import { openai } from '@/lib/openai';
+import { anthropic } from '@/lib/anthropic';
 import { supabase } from '@/lib/supabase';
 
 export const maxDuration = 60;
@@ -49,28 +49,40 @@ export async function POST(req: NextRequest) {
     }
   }
 
-  const completion = await openai.chat.completions.create({
-    model: 'gpt-4o',
-    response_format: { type: 'json_object' },
-    messages: [
-      { role: 'system', content: tailorPrompt },
-      {
-        role: 'user',
-        content: JSON.stringify(
-          {
-            candidate_profile,
-            jd_analysis,
-            cv_analysis,
-            match_scoring,
-            candidate_supplied_context: candidate_supplied_context ?? {},
-          },
-          null,
-          2,
-        ),
-      },
-    ],
-  });
+  try {
+    const message = await anthropic.messages.create({
+      model: 'claude-sonnet-4-6',
+      max_tokens: 16384,
+      system: tailorPrompt,
+      messages: [
+        {
+          role: 'user',
+          content: JSON.stringify(
+            {
+              candidate_profile,
+              jd_analysis,
+              cv_analysis,
+              match_scoring,
+              candidate_supplied_context: candidate_supplied_context ?? {},
+            },
+            null,
+            2,
+          ),
+        },
+      ],
+    });
 
-  const tailored_output = JSON.parse(completion.choices[0].message.content ?? '{}');
-  return NextResponse.json(tailored_output);
+    console.log('Anthropic response:', JSON.stringify(message, null, 2));
+    const block = message.content[0];
+    const raw = block?.type === 'text' ? block.text : '{}';
+    const jsonText = raw.replace(/^```(?:json)?\s*/m, '').replace(/\s*```\s*$/m, '').trim() || '{}';
+    const tailored_output = JSON.parse(jsonText);
+    return NextResponse.json(tailored_output);
+  } catch (err) {
+    console.error('Tailoring error:', err);
+    return NextResponse.json(
+      { error: err instanceof Error ? err.message : 'Tailoring failed' },
+      { status: 500 },
+    );
+  }
 }
