@@ -124,6 +124,7 @@ List specific weaknesses that will likely hurt scoring across most JD types:
 - Skills listed without evidence
 - No recent experience in stated skills
 - Education details incomplete
+- Flag inconsistencies between total_years_experience and the sum of role durations in the experience array. If the stated total_years_experience differs from the calculated sum by more than 1 year, add to cv_gaps: 'total_years_experience appears inconsistent with role dates — candidate should verify.
 
 ### Strengthening Suggestions
 Actionable suggestions to improve CV quality independent of any specific JD:

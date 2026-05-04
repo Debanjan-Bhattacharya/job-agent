@@ -1,0 +1,52 @@
+{
+  "name": "Arjun Kapoor",
+  "email": "arjun.kapoor@gmail.com",
+  "phone": "+918899776655",
+  "location": "Pune, India",
+  "summary": "Final year MBA at IIM Lucknow focused on product strategy. Two PM internships with measurable user impact.",
+  "total_years_experience": 0,
+  "experience_tier": "grad",
+  "experience_tier_override": null,
+  "skills": ["Product Management", "SQL", "A/B Testing", "Figma", "User Research", "Go-to-Market Strategy"],
+  "experience": [
+    {
+      "title": "Product Management Intern",
+      "company": "Swiggy",
+      "industry": "Food Delivery",
+      "start": "2025-04",
+      "end": "2025-06",
+      "bullets": [
+        "Increased checkout conversion by 12% by redesigning payment selection screen",
+        "Shipped new restaurant ranking feature used by 2M+ daily active users",
+        "Ran 4 A/B tests in collaboration with cross-functional team of 8"
+      ]
+    },
+    {
+      "title": "Product Intern",
+      "company": "PhonePe",
+      "industry": "Fintech",
+      "start": "2024-05",
+      "end": "2024-07",
+      "bullets": [
+        "Redesigned onboarding flow reducing first-week churn by 9%",
+        "Defined and tracked 5 OKRs for payments product team"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "MBA (Marketing & Strategy)",
+      "institution": "IIM Lucknow",
+      "year": 2026
+    },
+    {
+      "degree": "B.Tech Electronics",
+      "institution": "BITS Pilani",
+      "year": 2022
+    }
+  ],
+  "achievements": [
+    "Selected for IIM Lucknow Consulting Club — top 10% of batch",
+    "Reduced club event costs by 30% as Finance Head, BITS Pilani"
+  ]
+}

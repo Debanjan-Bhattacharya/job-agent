@@ -1,0 +1,57 @@
+ {
+    "name": "Carlos Esteban Rojas",
+    "email": "carlos.rojas@talento-latam.mx",
+    "phone": "+52-55-8211-7740",
+    "location": "Guadalajara, Mexico",
+    "summary": "Commercial sales professional transitioning into renewable energy solutions.",
+    "total_years_experience": 7,
+    "experience_tier": "mid-senior",
+    "experience_tier_override": null,
+    "skills": ["B2B Sales", "Client Relationship Management", "Negotiation", "Lead Generation", "Energy Solutions", "CRM Tools"],
+    "experience": [
+      {
+        "title": "Sales Executive",
+        "company": "Comercial NovaLinea",
+        "industry": "Industrial Equipment Sales",
+        "start": "2017-02",
+        "end": "2019-11",
+        "bullets": [
+          "Managed regional accounts",
+          "Generated new leads through outbound sales efforts"
+        ]
+      },
+      {
+        "title": "Account Manager",
+        "company": "Solaria Energia MX",
+        "industry": "Renewable Energy",
+        "start": "2020-06",
+        "end": "2023-01",
+        "bullets": [
+          "Closed solar installation contracts worth over $2.1M total revenue",
+          "Maintained 85% client retention rate",
+          "Collaborated with engineering teams during project delivery"
+        ]
+      },
+      {
+        "title": "Senior Business Development Manager",
+        "company": "VerdeGrid Power Solutions",
+        "industry": "Clean Energy Infrastructure",
+        "start": "2023-04",
+        "end": null,
+        "bullets": [
+          "Expanded enterprise client pipeline across western Mexico",
+          "Developed partnerships with construction firms"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "Licenciatura en Administración de Empresas",
+        "institution": "Universidad Metropolitana de Occidente",
+        "year": 2016
+      }
+    ],
+    "achievements": [
+      "Top regional sales performer in 2022"
+    ]
+  }

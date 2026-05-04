@@ -1,0 +1,53 @@
+{
+    "name": "Elena Fischer",
+    "email": "e.fischer.logistics@example.de",
+    "phone": "+49 170 1234567",
+    "location": "Hamburg, Germany",
+    "summary": "Experienced supply chain coordinator specializing in maritime logistics and European distribution networks.",
+    "total_years_experience": 6,
+    "experience_tier": "mid",
+    "experience_tier_override": null,
+    "skills": [
+      "Supply Chain Management",
+      "SAP ERP",
+      "Customs Compliance",
+      "English",
+      "German",
+      "Project Management"
+    ],
+    "experience": [
+      {
+        "title": "Supply Chain Coordinator",
+        "company": "Nordic Freight AG",
+        "industry": "Logistics",
+        "start": "2020-01",
+        "end": null,
+        "bullets": [
+          "Optimized shipping routes reducing fuel costs by 12% annually.",
+          "Managed vendor relationships across 5 countries in the EU.",
+          "Overseas implementation of a new warehouse management system."
+        ]
+      },
+      {
+        "title": "Junior Logistics Planner",
+        "company": "Elbe Port Services",
+        "industry": "Maritime",
+        "start": "2018-01",
+        "end": "2019-12",
+        "bullets": [
+          "Coordinated vessel scheduling for the main container terminal.",
+          "Reduced turnaround time for cargo handling by 10%."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.Sc. in Logistics Management",
+        "institution": "University of Hamburg",
+        "year": 2017
+      }
+    ],
+    "achievements": [
+      "Certified Supply Chain Professional (CSCP)"
+    ]
+  }

@@ -24,7 +24,9 @@
       "Bash(bash -c 'f=\"C:/Users/DELL/AppData/Local/Temp/claude/C--Users-DELL-job-agent/0b416ad8-18c1-4463-bd3e-2798c0032127/tasks/bqfqhxus6.output\"; until grep -qE \"PASS|FAIL|SUMMARY\" \"$f\" 2>/dev/null; do sleep 5; done; tail -25 \"$f\"')",
       "Bash(bash -c 'f=\"C:/Users/DELL/AppData/Local/Temp/claude/C--Users-DELL-job-agent/0b416ad8-18c1-4463-bd3e-2798c0032127/tasks/bln1a933m.output\"; until grep -q \"EVAL SUMMARY\" \"$f\" 2>/dev/null; do sleep 10; done; tail -30 \"$f\"')",
       "Bash(bash -c 'f=\"C:/Users/DELL/AppData/Local/Temp/claude/C--Users-DELL-job-agent/0b416ad8-18c1-4463-bd3e-2798c0032127/tasks/bkq0mnd7t.output\"; until grep -q \"EVAL SUMMARY\" \"$f\" 2>/dev/null; do sleep 15; done; tail -35 \"$f\"')",
-      "Bash(bash -c 'f=\"C:/Users/DELL/AppData/Local/Temp/claude/C--Users-DELL-job-agent/0b416ad8-18c1-4463-bd3e-2798c0032127/tasks/bfd61mcce.output\"; until grep -q \"EVAL SUMMARY\" \"$f\" 2>/dev/null; do sleep 15; done; tail -25 \"$f\"')"
+      "Bash(bash -c 'f=\"C:/Users/DELL/AppData/Local/Temp/claude/C--Users-DELL-job-agent/0b416ad8-18c1-4463-bd3e-2798c0032127/tasks/bfd61mcce.output\"; until grep -q \"EVAL SUMMARY\" \"$f\" 2>/dev/null; do sleep 15; done; tail -25 \"$f\"')",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\DELL\\\\job-agent\\\\evals\" -Recurse -File)",
+      "Bash(Select-Object -ExpandProperty FullName)"
     ]
   }
 }

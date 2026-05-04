@@ -1,0 +1,66 @@
+{
+    "name": "Tomasz Wierzbicki",
+    "email": "t.wierzbicki@protonmail.com",
+    "phone": "+48 604 812 390",
+    "location": "Warsaw, Poland",
+    "summary": "Supply chain and operations manager with 9 years of experience across automotive and industrial manufacturing sectors. Proven track record in lean transformation, vendor consolidation, and cross-border logistics.",
+    "total_years_experience": 9,
+    "experience_tier": "mid-senior",
+    "experience_tier_override": null,
+    "skills": ["SAP S/4HANA", "Lean Manufacturing", "Kaizen", "Supplier Negotiation", "S&OP", "Demand Forecasting", "ISO 9001", "Six Sigma Green Belt", "MS Excel (Advanced)"],
+    "experience": [
+      {
+        "title": "Logistics Coordinator",
+        "company": "Promar Automotive Components S.A.",
+        "industry": "Automotive Manufacturing",
+        "start": "2015-03",
+        "end": "2017-08",
+        "bullets": [
+          "Coordinated inbound freight for 3 production lines, managing relationships with 18 logistics providers across Poland and Germany.",
+          "Reduced average delivery lead time from 6.2 days to 4.1 days by renegotiating carrier SLAs.",
+          "Implemented a daily shipment tracking dashboard in Excel used by a team of 8."
+        ]
+      },
+      {
+        "title": "Operations Supervisor",
+        "company": "Promar Automotive Components S.A.",
+        "industry": "Automotive Manufacturing",
+        "start": "2017-09",
+        "end": "2020-04",
+        "bullets": [
+          "Supervised a floor team of 22 across two shifts, overseeing production output of 11,000 units/month.",
+          "Led a Kaizen initiative that reduced material waste by 14% and saved PLN 380,000 annually.",
+          "Promoted ISO 9001 compliance across the department, achieving zero non-conformances in 2019 audit."
+        ]
+      },
+      {
+        "title": "Supply Chain Manager",
+        "company": "Nordfeld Industrial GmbH (Warsaw Branch)",
+        "industry": "Industrial Equipment Manufacturing",
+        "start": "2020-07",
+        "end": null,
+        "bullets": [
+          "Managing end-to-end supply chain for a product portfolio of 340 SKUs across EU and MENA markets.",
+          "Consolidated vendor base from 67 to 41 suppliers, achieving 8% reduction in procurement costs (€1.1M savings in FY2022).",
+          "Deployed SAP S/4HANA across 2 facilities, cutting monthly close cycle from 9 days to 5.",
+          "Built and mentored a team of 6 procurement analysts, 2 of whom were promoted within 18 months."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "MSc Logistics and Supply Chain Management",
+        "institution": "Warsaw School of Economics (SGH)",
+        "year": 2015
+      },
+      {
+        "degree": "BSc Industrial Engineering",
+        "institution": "Warsaw University of Technology",
+        "year": 2013
+      }
+    ],
+    "achievements": [
+      "Six Sigma Green Belt certified — BSI Group, 2019",
+      "Speaker at LogisTech Poland 2022 Conference on nearshoring supply chain resilience"
+    ]
+}

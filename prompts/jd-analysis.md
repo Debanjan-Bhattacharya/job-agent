@@ -90,6 +90,14 @@ Return a single valid JSON object. No prose, markdown, or commentary outside the
     "weekend_required": false,
     "travel_required": false,
     "work_arrangement": "wfh|wfo|hybrid|unspecified"
+  },
+  "employer_contact": {
+  "email": "",
+  "phone": "",
+  "address": "",
+  "application_url": "",
+  "linkedin_url": "",
+  "other_links": []
   }
 }
 
@@ -109,6 +117,9 @@ Return a single valid JSON object. No prose, markdown, or commentary outside the
   - global-top: FAANG, McKinsey/MBB, Goldman/bulge bracket, Unilever/P&G tier
   - known-india: Tata group, Infosys, Flipkart, Swiggy, Razorpay, top Indian unicorns, BSE/NSE 500
   - unknown: all others
+
+### Employer Contact
+Extract any employer contact information explicitly stated in the JD: email addresses, phone numbers, physical address, application portal URLs, LinkedIn company page, or any other links. If not present, use empty string or empty array. Never infer or hallucinate contact details
 
 ### Knowledge Half-Life
 Classify the ROLE type's core knowledge depreciation rate — not the technology being built or the tech stack used.
@@ -138,6 +149,7 @@ Set dimension_weights based on half-life:
 - C8_culture_fit: maximum weight 10 — unverifiable from CV, low signal
 - C10 network/relationships: never scored — output as cannot_assess_from_cv entry only
 - Exclude inactive categories from active_categories entirely — do not include with weight 0
+- Weight assignment must be deterministic — given the same JD text, always assign the same weights. Do not vary weights based on internal reasoning variations. Assign weights based strictly on: (a) how many signals the JD contains per category, (b) how much JD text is devoted to each category, (c) the minimum weight rules. Show your weight reasoning explicitly in a weight_reasoning field per category.
 
 ### Mandatory Gates
 A mandatory gate is a requirement where absence makes the candidate fundamentally unqualified regardless of other strengths. Classify as mandatory_gate ONLY when JD uses explicit language: 'required', 'must have', 'mandatory', 'minimum qualification', 'essential', 'necessary'.

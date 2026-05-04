@@ -1,0 +1,53 @@
+{
+    "name": "Kofi Mensah",
+    "email": "k.mensah88@example.gh",
+    "phone": "+233 24 555 0199",
+    "location": "Accra, Ghana",
+    "summary": "Senior agricultural project manager with over a decade of experience driving sustainable farming initiatives across West Africa.",
+    "total_years_experience": 12,
+    "experience_tier": "senior",
+    "experience_tier_override": null,
+    "skills": [
+      "Agronomy",
+      "Grant Management",
+      "Stakeholder Engagement",
+      "Sustainability",
+      "Data Analysis"
+    ],
+    "experience": [
+      {
+        "title": "Director of Agricultural Programs",
+        "company": "Savanna Growth Partners",
+        "industry": "Agriculture/Non-Profit",
+        "start": "2018-05",
+        "end": null,
+        "bullets": [
+          "Scaled smallholder farmer outreach from 2,000 to 15,000 participants in 4 years.",
+          "Secured $4.5M in international grants for irrigation infrastructure.",
+          "Developed a mobile-based crop monitoring system used by regional field agents."
+        ]
+      },
+      {
+        "title": "Senior Project Manager",
+        "company": "West Africa AgriCorp",
+        "industry": "Agribusiness",
+        "start": "2012-01",
+        "end": "2018-03",
+        "bullets": [
+          "Led a cross-functional team of 20 to improve cocoa yield consistency.",
+          "Introduced organic fertilization techniques that increased output by 20%."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "M.Sc. in Agricultural Economics",
+        "institution": "University of Ghana",
+        "year": 2011
+      }
+    ],
+    "achievements": [
+      "Keynote speaker at the African Green Revolution Forum 2021",
+      "West Africa Leader in Sustainability Award 2019"
+    ]
+  }

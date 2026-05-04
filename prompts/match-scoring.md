@@ -45,7 +45,7 @@ For each gate in jd_analysis.mandatory_gates:
 
 ### Step 2: Relevant Years Calculation
 From candidate_profile experience array:
-- Exclude roles clearly unrelated to this JD's domain and function
+- Exclude roles clearly unrelated to this JD's domain and function. A role is unrelated if its primary function does not match or meaningfully support the target role's primary function. Partial relevance is not sufficient — the role must be primarily aligned. When in doubt, exclude rather than include. Do not award partial credit for adjacent functions.
 - Sum remaining role durations
 - Set relevant_years_experience
 - Use this value (not total_years) for all experience scoring
@@ -80,6 +80,7 @@ Select the highest applicable multiplier for evidence found:
   - Use 0.7x if certification is supplementary
 - Online course from recognised provider (Coursera, edX, Udemy): 0.4x
 - Online course unknown provider: 0.3x
+Credibility multipliers apply only to categories where evidence comes from work history: C2, C3, C4, C5. Do not apply any credibility multiplier to C1 credentials, C6 quantified impact, C7 location, C8 culture fit, or C9 company role context.
 
 4c. Degree Difficulty Modifier (C1 only):
 Apply to credential scoring:
@@ -138,6 +139,16 @@ senior tier:
 - Overqualification: if relevant_years >= 2× jd max_years → flag and deduct up to 20 from C5
 - C5 seniority: scope signals (team size, budget, org level) weighted equally with title
 
+### Location Scoring (C7)
+When scoring C7_location_availability, apply these India-specific metro proximity rules:
+
+Same city as JD location: 100
+Same metropolitan region as a listed JD city: 75-80. Indian metro regions: NCR (Delhi, Gurugram, Noida, Faridabad, Ghaziabad), MMR (Mumbai, Thane, Navi Mumbai), Bengaluru metro, Hyderabad metro, Chennai metro, Pune metro, Kolkata metro.
+Same country, willing to relocate (stated or inferable): 60-70
+Different country: 20-40
+Location unknown: 50
+Never apply credibility multiplier to location scoring.
+
 ### Step 5: Overall Score Calculation
 weighted_score(Ci) = evidence_score(Ci) × (jd_weight(Ci) / 100)
 overall_score = sum of all weighted_score(Ci), rounded to nearest integer
@@ -169,7 +180,7 @@ reasoning must:
 - Never write generic statements
 
 ### Step 7: Cannot Assess + Candidate Inputs Needed
-cannot_assess_from_cv: carry forward from jd_analysis.cannot_assess_from_cv, add any additional gaps discovered during scoring. Work arrangement preference is a candidate filter — do not factor into any category score or overall score. Never penalise or reward based on work arrangement match or mismatch.
+cannot_assess_from_cv: carry forward from jd_analysis.cannot_assess_from_cv, add any additional gaps discovered during scoring. Work arrangement preference is a candidate filter — do not factor into any category score or overall score. Never penalise or reward based on work arrangement match or mismatch. cannot_assess_from_cv must only list requirements explicitly stated in jd_analysis.active_categories signals or jd_analysis. Never add inferred soft skills, motivational traits, or cultural attributes that are not explicitly stated as requirements in the JD. Each item must be traceable to a specific JD signal.
 
 candidate_inputs_needed: generate specific questions where candidate-supplied information would materially change the score:
 - Language fluency: "The JD requires Hindi and Marathi fluency — please confirm if you speak these"
@@ -177,6 +188,7 @@ candidate_inputs_needed: generate specific questions where candidate-supplied in
 - Quantified achievements: "Your role at [company] mentions [achievement] — can you add a specific metric? e.g. team size, revenue impact, % improvement"
 - Career break: "A gap is detected between [date] and [date] — if this was a career break, adding context may improve your score"
 Maximum 5 questions. Most score-impactful first.
+- cannot_assess_from_cv must only list requirements explicitly stated in jd_analysis.active_categories signals or jd_analysis.cannot_assess_from_cv. Never add inferred soft skills, motivational traits, or cultural attributes that are not explicitly stated as requirements in the JD. Each item must be traceable to a specific JD signal.
 
 ### Step 8: Tailoring Priorities
 Generate ordered list of categories where:
@@ -217,3 +229,4 @@ score_confidence:
 - tailoring_action must never suggest fabricating experience — only surface, reframe, or reorder existing evidence.
 - candidate_inputs_needed must reference specific gaps found — never generic questions.
 - Never hallucinate. If evidence is absent, score 0 for that dimension — do not infer presence.
+- Never manually adjust a calculated score after computing it. The formula output is the score. Do not round up or add bonuses outside the formula. If an adjustment is needed, apply it within the formula parameters — adjust depth, recency, or context scores before calculating, not after.

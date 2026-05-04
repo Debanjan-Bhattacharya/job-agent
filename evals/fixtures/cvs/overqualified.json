@@ -1,0 +1,45 @@
+{
+  "name": "Sunita Rao",
+  "email": "sunita.rao@gmail.com",
+  "phone": "+918877665544",
+  "location": "Hyderabad, India",
+  "summary": "18 years of engineering leadership across product and platform teams at scale.",
+  "total_years_experience": 18,
+  "experience_tier": "senior",
+  "experience_tier_override": null,
+  "skills": ["Engineering Leadership", "System Architecture", "Product Strategy", "Team Building", "Agile", "Java", "AWS"],
+  "experience": [
+    {
+      "title": "VP Engineering",
+      "company": "Flipkart",
+      "industry": "E-commerce",
+      "start": "2019-01",
+      "end": "2025-06",
+      "bullets": ["Led 120-person engineering org across 4 product verticals", "Drove platform migration reducing infra costs by ₹40Cr/year", "Built and scaled 3 teams from 0 to 30 engineers each"]
+    },
+    {
+      "title": "Engineering Manager",
+      "company": "Microsoft",
+      "industry": "Technology",
+      "start": "2014-03",
+      "end": "2018-12",
+      "bullets": ["Managed team of 18 engineers on Azure storage products", "Shipped 4 major releases used by 2M+ enterprise customers"]
+    },
+    {
+      "title": "Senior Software Engineer",
+      "company": "Infosys",
+      "industry": "IT Services",
+      "start": "2007-06",
+      "end": "2014-02",
+      "bullets": ["Built core banking modules for 3 international clients", "Mentored 8 junior engineers"]
+    }
+  ],
+  "education": [
+    {
+      "degree": "B.Tech Computer Science",
+      "institution": "IIT Bombay",
+      "year": 2007
+    }
+  ],
+  "achievements": ["Forbes 30 Under 30 India 2015", "Patent holder for distributed caching system"]
+}

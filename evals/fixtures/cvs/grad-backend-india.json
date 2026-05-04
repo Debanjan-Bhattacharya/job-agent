@@ -1,0 +1,48 @@
+{
+    "name": "Priya Nair",
+    "email": "priya.nair92@gmail.com",
+    "phone": "+91 98201 34567",
+    "location": "Bengaluru, Karnataka, India",
+    "summary": "Recent computer science graduate with hands-on internship experience in backend development and a strong foundation in Python and cloud technologies. Eager to contribute to scalable product teams.",
+    "total_years_experience": 1,
+    "experience_tier": "grad",
+    "experience_tier_override": null,
+    "skills": ["Python", "Django", "PostgreSQL", "AWS EC2", "Git", "REST APIs", "Linux", "Docker (basic)"],
+    "experience": [
+      {
+        "title": "Software Engineering Intern",
+        "company": "Konnect Systems Pvt. Ltd.",
+        "industry": "B2B SaaS",
+        "start": "2023-01",
+        "end": "2023-06",
+        "bullets": [
+          "Built 3 new REST API endpoints in Django reducing frontend load time by 18% for the reporting module.",
+          "Wrote unit tests achieving 74% code coverage for the billing service.",
+          "Collaborated with 2 senior engineers to migrate legacy MySQL queries to PostgreSQL, cutting query execution time by 30%."
+        ]
+      },
+      {
+        "title": "Junior Backend Developer",
+        "company": "Konnect Systems Pvt. Ltd.",
+        "industry": "B2B SaaS",
+        "start": "2023-07",
+        "end": null,
+        "bullets": [
+          "Maintaining and extending internal analytics dashboard used by 12 enterprise clients.",
+          "Resolved 40+ production bugs since joining full-time, reducing open P2 ticket count by 55%.",
+          "Introduced pre-commit linting hooks that cut code review cycles from 3 rounds to 1.5 on average."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.E. Computer Science and Engineering",
+        "institution": "R.V. College of Engineering, Bengaluru",
+        "year": 2022
+      }
+    ],
+    "achievements": [
+      "Best Intern Project Award — Konnect Systems Q1 2023",
+      "Published technical blog post on Django ORM optimization with 4,200 views on Medium"
+    ]
+  }

@@ -1,0 +1,82 @@
+{
+    "name": "Marcus J. Whitfield",
+    "email": "mwhitfield@execprofile.net",
+    "phone": "+1 617 402 8831",
+    "location": "Boston, MA, United States",
+    "summary": "Senior healthcare technology executive with 18 years of experience leading product and engineering organizations at growth-stage and enterprise health-tech companies. Deep expertise in EHR integrations, value-based care platforms, and FDA-regulated SaaS. Adept at scaling engineering teams from 12 to 80+ and driving 8–12x revenue growth through product-market fit and strategic partnerships.",
+    "total_years_experience": 18,
+    "experience_tier": "senior",
+    "experience_tier_override": null,
+    "skills": ["Product Strategy", "Engineering Leadership", "EHR Integration (HL7/FHIR)", "P&L Ownership", "Agile at Scale", "Regulatory Compliance (HIPAA, FDA 21 CFR Part 11)", "M&A Technical Due Diligence", "OKR Frameworks", "Stakeholder Management", "Cloud Architecture (AWS)"],
+    "experience": [
+      {
+        "title": "Software Engineer",
+        "company": "MedCore Solutions Inc.",
+        "industry": "Health IT",
+        "start": "2006-06",
+        "end": "2009-03",
+        "bullets": [
+          "Developed HL7 v2 integration modules connecting EMR systems for 14 hospital clients in New England.",
+          "Reduced data ingestion errors by 43% through schema validation improvements.",
+          "Mentored 2 junior engineers as an informal tech lead."
+        ]
+      },
+      {
+        "title": "Senior Product Manager",
+        "company": "Verahealth Technologies",
+        "industry": "Health IT",
+        "start": "2009-05",
+        "end": "2013-11",
+        "bullets": [
+          "Owned the product roadmap for a care coordination platform used by 38 ACOs across 11 states.",
+          "Launched 4 major product releases that contributed to ARR growth from $4.2M to $19.7M.",
+          "Led HIPAA compliance overhaul reducing security audit findings from 27 to 3.",
+          "Managed a cross-functional team of 18 including engineers, designers, and clinical informaticists."
+        ]
+      },
+      {
+        "title": "VP of Product & Engineering",
+        "company": "ClarityPath Health",
+        "industry": "Digital Health / Value-Based Care",
+        "start": "2014-02",
+        "end": "2018-08",
+        "bullets": [
+          "Built and scaled engineering organization from 12 to 54 engineers across Boston and Hyderabad offices.",
+          "Drove product strategy for a value-based care analytics platform; grew customer base from 22 to 190 health systems.",
+          "Closed 3 key OEM partnerships with Epic, Cerner, and Athenahealth adding $8.3M in contracted ARR.",
+          "Oversaw $21M Series B technical due diligence process; company acquired by NovaCare Group in 2018 for $140M."
+        ]
+      },
+      {
+        "title": "Chief Product Officer",
+        "company": "Solara Digital Health (NovaCare Subsidiary)",
+        "industry": "Digital Health",
+        "start": "2018-10",
+        "end": null,
+        "bullets": [
+          "Leading product, engineering, and data science for a 210-person business unit with $74M ARR.",
+          "Launched AI-driven risk stratification module adopted by 67 health plan clients within 12 months of release.",
+          "Reduced platform churn from 18% to 7% through a customer success-driven product iteration program.",
+          "Built and chair an external Clinical Advisory Board of 9 physicians to guide product direction.",
+          "Managing $38M annual technology budget with consistent delivery within 3% of target."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "MBA — Health Sector Management",
+        "institution": "Boston University Questrom School of Business",
+        "year": 2009
+      },
+      {
+        "degree": "BSc Computer Science",
+        "institution": "Northeastern University",
+        "year": 2006
+      }
+    ],
+    "achievements": [
+      "Boston Business Journal — 40 Under 40 (2016)",
+      "HIMSS Stage 7 implementation lead — ClarityPath Health, 2017",
+      "Guest lecturer, Harvard T.H. Chan School of Public Health, Digital Health Innovation course (2021–present)"
+    ]
+  }

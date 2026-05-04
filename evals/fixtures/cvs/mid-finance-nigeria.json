@@ -1,0 +1,57 @@
+{
+    "name": "Amara Diallo",
+    "email": "amara.diallo.work@outlook.com",
+    "phone": "+234 803 471 2290",
+    "location": "Lagos, Nigeria",
+    "summary": "",
+    "total_years_experience": 4,
+    "experience_tier": "mid",
+    "experience_tier_override": null,
+    "skills": ["Financial Reporting", "IFRS", "QuickBooks", "Microsoft Excel", "Payroll Management", "Tax Compliance", "Bank Reconciliation"],
+    "experience": [
+      {
+        "title": "Accounts Assistant",
+        "company": "Brentfield & Okafor Chartered Accountants",
+        "industry": "Professional Services / Accounting",
+        "start": "2019-02",
+        "end": "2020-11",
+        "bullets": [
+          "Assisted senior accountants with preparation of financial statements for SME clients.",
+          "Processed payroll for 6 client companies on a monthly basis.",
+          "Performed bank reconciliations and resolved discrepancies."
+        ]
+      },
+      {
+        "title": "Finance Officer",
+        "company": "Zenlite Consumer Goods Ltd.",
+        "industry": "FMCG",
+        "start": "2021-04",
+        "end": "2022-09",
+        "bullets": [
+          "Managed accounts payable and receivable for a business with ₦850M annual turnover.",
+          "Prepared monthly management accounts and variance reports for the CFO.",
+          "Worked with external auditors during annual audit with no material findings raised."
+        ]
+      },
+      {
+        "title": "Finance Analyst",
+        "company": "Helix Telecoms Nigeria",
+        "industry": "Telecommunications",
+        "start": "2023-01",
+        "end": null,
+        "bullets": [
+          "Responsible for budgeting and forecasting across 3 regional business units.",
+          "Improved invoice processing time by streamlining approval workflows.",
+          "Produces weekly cash flow reports presented to senior management."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "BSc Accounting",
+        "institution": "University of Lagos",
+        "year": 2018
+      }
+    ],
+    "achievements": []
+  }

@@ -41,6 +41,7 @@ A claim is fabricated if any of the following are true:
 - A skill, tool, technology, framework, or certification is claimed that is not present in original_profile.skills or original_profile.experience descriptions
 - A qualification or degree is stated that is not in original_profile.education
 - A metric from one role is attributed to a different role
+- Check not only for added claims but also for substituted factual words. If a specific noun, domain term, industry name, role-specific terminology, or metric in the original bullet has been replaced with a different word in the tailored version, flag it as a fabrication. Reframing context around a fact is permitted. Replacing the fact itself is not.
 
 A claim is NOT fabricated if:
 - It rephrases or reframes existing content using different vocabulary (e.g. "managed" → "led")

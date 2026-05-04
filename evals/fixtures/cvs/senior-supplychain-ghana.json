@@ -1,0 +1,56 @@
+{
+    "name": "Kwame Adusei",
+    "email": "kwame.adusei@careerhub.africa",
+    "phone": "+233-54-982-1103",
+    "location": "Accra, Ghana",
+    "summary": "",
+    "total_years_experience": 11,
+    "experience_tier": "senior",
+    "experience_tier_override": null,
+    "skills": ["Supply Chain Management", "Procurement", "Vendor Negotiation", "Logistics Optimization", "ERP Systems", "Operations Leadership"],
+    "experience": [
+      {
+        "title": "Logistics Coordinator",
+        "company": "GoldenRoute Freight Services",
+        "industry": "Logistics & Transportation",
+        "start": "2013-06",
+        "end": "2016-02",
+        "bullets": [
+          "Coordinated regional freight deliveries",
+          "Worked with transport vendors and maintained shipment records"
+        ]
+      },
+      {
+        "title": "Supply Chain Manager",
+        "company": "AgriLink Distribution Ltd",
+        "industry": "Agricultural Distribution",
+        "start": "2016-05",
+        "end": "2021-08",
+        "bullets": [
+          "Reduced delivery delays by 22% through route optimization",
+          "Negotiated supplier contracts saving approximately $400K annually",
+          "Implemented ERP-based inventory tracking"
+        ]
+      },
+      {
+        "title": "Head of Operations",
+        "company": "WestBridge Commodities Group",
+        "industry": "Commodity Trading",
+        "start": "2021-10",
+        "end": null,
+        "bullets": [
+          "Oversaw logistics operations across 5 West African countries",
+          "Managed team of 40+ staff",
+          "Improved warehouse throughput efficiency"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "BSc in Logistics and Supply Chain",
+        "institution": "Coastal Metropolitan University",
+        "year": 2013
+      }
+    ],
+    "achievements": []
+  }

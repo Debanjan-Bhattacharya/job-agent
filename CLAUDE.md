@@ -156,3 +156,14 @@ create table tailored_resumes (
 - Extraction calls: OpenAI `gpt-5-nano` with `response_format: { type: 'json_object' }`
 - Scoring/tailoring calls: Anthropic `claude-sonnet-4-6` via `anthropic.messages.create`
 - JD analysis results cached in Supabase by `sha256(jd_text) + '_p' + sha256(prompt)[0:8]`
+
+---
+
+## Token Efficiency Rules
+
+- Never use Claude Code (CC) for file creation, boilerplate, or eval suite generation — use free LLM (ChatGPT free / Gemini free) with a well-written prompt instead
+- Claude Code (CC) is only for: complex multi-file debugging, TypeScript errors, environment issues, tasks requiring codebase context
+- Build Engine (claude.ai) is for: architecture, prompts, decisions, reviews
+- Free LLMs are for: generating test data, boilerplate files, JSON fixtures, eval case templates, documentation drafts
+- Before giving any task to CC or Build Engine, ask: can a free LLM do this with a good prompt? If yes, write the prompt and use that instead
+- One formal CC checkpoint per build session — batch all CC tasks together rather than one at a time

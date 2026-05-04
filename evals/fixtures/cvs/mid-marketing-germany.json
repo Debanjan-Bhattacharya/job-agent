@@ -1,0 +1,47 @@
+{
+    "name": "Lena Hoffmann",
+    "email": "lena.hoffmann@eurocareer.de",
+    "phone": "+49-157-88433210",
+    "location": "Berlin, Germany",
+    "summary": "Product marketing specialist experienced in SaaS go-to-market strategy and customer lifecycle marketing.",
+    "total_years_experience": 6,
+    "experience_tier": "mid",
+    "experience_tier_override": null,
+    "skills": ["Product Marketing", "Go-to-Market Strategy", "HubSpot", "Market Research", "B2B SaaS", "Content Strategy"],
+    "experience": [
+      {
+        "title": "Marketing Associate",
+        "company": "CloudSpring Technologies GmbH",
+        "industry": "SaaS",
+        "start": "2019-03",
+        "end": "2021-01",
+        "bullets": [
+          "Supported launch campaigns for cloud workflow software across DACH region",
+          "Managed email campaigns reaching 40K subscribers",
+          "Coordinated product webinars and sales enablement content"
+        ]
+      },
+      {
+        "title": "Product Marketing Manager",
+        "company": "NovaStack Systems",
+        "industry": "Enterprise SaaS",
+        "start": "2021-03",
+        "end": null,
+        "bullets": [
+          "Led GTM strategy increasing trial-to-paid conversion by 18%",
+          "Conducted competitive positioning analysis across 12 competitors",
+          "Collaborated with product and sales teams to refine messaging"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "MSc in Business Administration",
+        "institution": "Humboldt Business School",
+        "year": 2018
+      }
+    ],
+    "achievements": [
+      "Speaker at European SaaS Growth Summit 2024"
+    ]
+  }

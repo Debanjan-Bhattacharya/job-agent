@@ -1,0 +1,47 @@
+{
+    "name": "Arjun Prakash Menon",
+    "email": "arjun.menon@talentmail.in",
+    "phone": "+91-88219-44761",
+    "location": "Bengaluru, India",
+    "summary": "Entry-level data analyst with internship experience in fintech analytics and dashboard reporting.",
+    "total_years_experience": 1,
+    "experience_tier": "grad",
+    "experience_tier_override": null,
+    "skills": ["SQL", "Python", "Excel", "Power BI", "Data Cleaning", "Statistics"],
+    "experience": [
+      {
+        "title": "Data Analyst Intern",
+        "company": "FinEdge Analytics Pvt Ltd",
+        "industry": "Fintech Analytics",
+        "start": "2024-01",
+        "end": "2024-09",
+        "bullets": [
+          "Built Power BI dashboards tracking customer transaction behavior for 50K+ users",
+          "Cleaned and validated datasets using Python scripts reducing manual processing time by 30%",
+          "Assisted senior analysts in fraud detection reporting"
+        ]
+      },
+      {
+        "title": "Junior Data Analyst",
+        "company": "InsightGrid Solutions",
+        "industry": "Business Intelligence Consulting",
+        "start": "2024-10",
+        "end": null,
+        "bullets": [
+          "Prepared weekly performance reports for SME retail clients",
+          "Automated Excel reporting workflows",
+          "Worked with SQL queries to extract sales performance data"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.Tech in Information Science",
+        "institution": "South Valley Institute of Technology",
+        "year": 2023
+      }
+    ],
+    "achievements": [
+      "Final year project on retail demand prediction using regression models"
+    ]
+  }

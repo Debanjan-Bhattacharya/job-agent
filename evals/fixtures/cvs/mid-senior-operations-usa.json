@@ -1,0 +1,50 @@
+{
+    "name": "Sarah Jenkins",
+    "email": "s.jenkins_ops@example.com",
+    "phone": "+1 415 555 0102",
+    "location": "San Francisco, USA",
+    "summary": "Adaptable operations professional with experience in fast-paced startup environments.",
+    "total_years_experience": 7,
+    "experience_tier": "mid-senior",
+    "experience_tier_override": null,
+    "skills": [
+      "Operations",
+      "Customer Success",
+      "Salesforce",
+      "Team Leadership"
+    ],
+    "experience": [
+      {
+        "title": "Operations Lead",
+        "company": "Swift Delivery Inc.",
+        "industry": "Gig Economy",
+        "start": "2021-08",
+        "end": null,
+        "bullets": [
+          "Handled day-to-day operations and team management.",
+          "Improved driver onboarding process.",
+          "Helped with various administrative tasks."
+        ]
+      },
+      {
+        "title": "Customer Operations Specialist",
+        "company": "CloudScale Systems",
+        "industry": "SaaS",
+        "start": "2017-02",
+        "end": "2020-03",
+        "bullets": [
+          "Resolved high-priority customer tickets.",
+          "Worked on internal documentation.",
+          "Communicated with engineering teams about product bugs."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.A. in Communications",
+        "institution": "University of Oregon",
+        "year": 2016
+      }
+    ],
+    "achievements": []
+  }

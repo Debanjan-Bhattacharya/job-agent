@@ -136,6 +136,8 @@ Output per role:
 
 original_bullets: copy the bullets from candidate_profile.experience[i].bullets verbatim into this array. This is required — every bullet from the original must appear here. tailored_bullets count must equal original_bullets count.
 
+When ordering bullets, apply a quality filter before relevance: a bullet with no quantified outcome and a vague description should never be placed above a bullet that is both relevant and well-formed. Relevance alone is insufficient to elevate a weak bullet — strength and relevance together determine position.
+
 ### Step 4: Rewrite Skills Section
 - Front-load skills that match high-weight JD signals
 - Remove or deprioritise skills with zero relevance to this JD
@@ -218,5 +220,8 @@ Qualification flags:
 - All changes_made entries must describe what changed and why — traceability is required.
 - cannot_cover_by_tailoring must list every gap that tailoring cannot address — do not omit gaps to make output look better.
 - Hard rule: never remove any bullet from the output. Every bullet from the original must appear in the tailored output — either rewritten, kept as-is, or deprioritised to end of list. Removal is not permitted under any circumstance.
-- Hard rule: before reordering bullets, detect whether the first bullet functions as a role summary — a broad statement covering overall scope, total impact, or role context that sets up the bullets below it. Signal: contains aggregate metrics, mentions total scale, or reads as an overview rather than a specific task. If yes: treat it as a narrative anchor — keep it first, reorder all other bullets below it by JD relevance. If no: reorder all bullets freely by JD relevance.
+- Narrative anchor detection: if the first bullet functions as a scope-setting overview, check its JD relevance before anchoring it. If the first bullet's primary content scores below 40 on relevance to the JD's highest-weight category, the anchor rule is waived — reorder freely to place the most JD-relevant high-quality bullet first. The replacement bullet must be well-formed and quantified. No fabrication permitted.
 - Output must be valid parseable JSON. No trailing commas, no comments, no markdown fences.
+- Never add activities, processes, or outcomes that are not explicitly stated in the original bullets — even if they are reasonable inferences from the work described. 'Wrote integration specs' is an inference, not a fact — do not add it unless the original bullet states it. 'Eliminating manual handoff steps' is an interpretation, not a stated outcome — do not add it. Only reframe what is explicitly present.
+- Never use em dashes (—) or double dashes (--) in any tailored bullet. Restructure the sentence or use a comma instead.
+- Never change specific factual words in original bullets — industry names, domain names, technology names, and role-specific terminology must be preserved exactly. 'Financial requirements' cannot become 'operational requirements' — only add context around it, never replace it.

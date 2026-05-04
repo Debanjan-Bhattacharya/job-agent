@@ -1,4 +1,6 @@
 import _ from 'lodash';
+import { mkdirSync, writeFileSync } from 'fs';
+import { join } from 'path';
 import { type Assertion, type AssertionResult, runAssertion } from './assertions';
 
 export interface TestCase {
@@ -118,21 +120,56 @@ const BOLD = '\x1b[1m';
 const DIM = '\x1b[2m';
 
 export function printResults(results: CaseResult[]): void {
-  console.log('');
-  for (const r of results) {
-    const icon = r.passed ? `${GREEN}PASS${RESET}` : `${RED}FAIL${RESET}`;
-    console.log(`${BOLD}[${icon}${BOLD}]${RESET} ${r.testCase.id} — ${r.testCase.description} ${DIM}(${r.durationMs}ms)${RESET}`);
-
+  const failed = results.filter((r) => !r.passed);
+  if (failed.length === 0) {
+    console.log('');
+    return;
+  }
+  console.log(`\n${BOLD}${RED}FAILED CASES${RESET}`);
+  for (const r of failed) {
+    console.log(`\n${BOLD}[${RED}FAIL${RESET}${BOLD}]${RESET} ${r.testCase.id} — ${r.testCase.description} ${DIM}(${r.durationMs}ms)${RESET}`);
     if (r.error) {
       console.log(`  ${RED}Error: ${r.error}${RESET}`);
     }
-
     for (const o of r.assertionOutcomes) {
-      const colour = o.result.passed ? GREEN : RED;
-      console.log(`  ${colour}${o.result.message}${RESET}`);
+      if (!o.result.passed) {
+        console.log(`  ${RED}${o.result.message}${RESET}`);
+      }
     }
-    console.log('');
   }
+  console.log('');
+}
+
+export function writeSummaryJson(results: CaseResult[]): void {
+  const total = results.length;
+  const passed = results.filter((r) => r.passed).length;
+  const failed = total - passed;
+  const passRate = total > 0 ? `${((passed / total) * 100).toFixed(1)}%` : '0.0%';
+
+  const failedCases = results
+    .filter((r) => !r.passed)
+    .map((r) => ({
+      id: r.testCase.id,
+      description: r.testCase.description,
+      failed_assertions: r.error
+        ? [`Error: ${r.error}`]
+        : r.assertionOutcomes
+            .filter((o) => !o.result.passed)
+            .map((o) => o.result.message),
+    }));
+
+  const summary = {
+    run_date: new Date().toISOString(),
+    total_cases: total,
+    passed,
+    failed,
+    pass_rate: passRate,
+    failed_cases: failedCases,
+  };
+
+  const resultsDir = join(__dirname, '..', 'results');
+  mkdirSync(resultsDir, { recursive: true });
+  writeFileSync(join(resultsDir, 'summary.json'), JSON.stringify(summary, null, 2));
 }
 
 export function printSummaryTable(allResults: CaseResult[]): void {

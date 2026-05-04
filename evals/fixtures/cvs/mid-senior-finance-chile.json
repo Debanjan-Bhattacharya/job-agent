@@ -1,0 +1,64 @@
+{
+    "name": "Ricardo Mendez",
+    "email": "mendez.finance@example.cl",
+    "phone": "+56 2 2233 4455",
+    "location": "Santiago, Chile",
+    "summary": "",
+    "total_years_experience": 9,
+    "experience_tier": "mid-senior",
+    "experience_tier_override": null,
+    "skills": [
+      "Financial Modeling",
+      "Corporate Finance",
+      "Spanish",
+      "English",
+      "Excel VBA",
+      "IFRS"
+    ],
+    "experience": [
+      {
+        "title": "Senior Financial Analyst",
+        "company": "Andina Capital",
+        "industry": "Investment Banking",
+        "start": "2022-01",
+        "end": null,
+        "bullets": [
+          "Executing valuation models for M&A transactions in the mining sector.",
+          "Preparing quarterly investor presentations for the board of directors.",
+          "Overseeing junior analysts on valuation workstreams."
+        ]
+      },
+      {
+        "title": "Finance Associate",
+        "company": "Santiago Trading Group",
+        "industry": "Finance",
+        "start": "2019-06",
+        "end": "2021-06",
+        "bullets": [
+          "Managed cash flow forecasting and reporting.",
+          "Reduced monthly closing cycle from 10 days to 6 days."
+        ]
+      },
+      {
+        "title": "Junior Accountant",
+        "company": "Valparaiso Imports",
+        "industry": "Retail",
+        "start": "2015-01",
+        "end": "2018-01",
+        "bullets": [
+          "Accounts payable and receivable management.",
+          "Payroll processing for 50 employees."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "Degree in Business Administration",
+        "institution": "Pontificia Universidad Católica de Chile",
+        "year": 2014
+      }
+    ],
+    "achievements": [
+      "CFA Level II Candidate"
+    ]
+  }

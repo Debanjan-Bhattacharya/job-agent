@@ -1,0 +1,37 @@
+{
+  "name": "Priya Sharma",
+  "email": "priya.sharma@gmail.com",
+  "phone": "+919876543210",
+  "location": "Bangalore, India",
+  "summary": "Final year B.Tech student at NIT Trichy with strong interest in product management. Built 3 side projects with real users.",
+  "total_years_experience": 0,
+  "experience_tier": "grad",
+  "experience_tier_override": null,
+  "skills": ["Product Thinking", "Figma", "SQL", "Python", "User Research", "Agile"],
+  "experience": [
+    {
+      "title": "Product Intern",
+      "company": "Meesho",
+      "industry": "E-commerce",
+      "start": "2025-05",
+      "end": "2025-07",
+      "bullets": ["Built seller onboarding flow reducing drop-off by 18%", "Ran 3 user interviews to identify pain points in listing flow", "Shipped 2 features in 8-week internship"]
+    },
+    {
+      "title": "Product Intern",
+      "company": "Razorpay",
+      "industry": "Fintech",
+      "start": "2024-12",
+      "end": "2025-02",
+      "bullets": ["Researched payment failure patterns across 50K transactions", "Proposed UX fix adopted by engineering team"]
+    }
+  ],
+  "education": [
+    {
+      "degree": "B.Tech Computer Science",
+      "institution": "NIT Trichy",
+      "year": 2026
+    }
+  ],
+  "achievements": ["Built campus food delivery app with 300+ active users", "Winner, Smart India Hackathon 2024"]
+}

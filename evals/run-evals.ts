@@ -19,6 +19,7 @@ import {
   runCase,
   printResults,
   printSummaryTable,
+  writeSummaryJson,
 } from './lib/runner';
 
 const BASE_URL = 'http://localhost:3000';
@@ -41,6 +42,15 @@ const callScore: CallFn = async (input) => {
   return res.json();
 };
 
+const callCvAnalysis: CallFn = async (input) => {
+  const res = await fetch(`${BASE_URL}/api/cv/analyse`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(input),
+  });
+  return res.json();
+};
+
 const callTailor: CallFn = async (input) => {
   const res = await fetch(`${BASE_URL}/api/resume/tailor`, {
     method: 'POST',
@@ -56,6 +66,8 @@ const callTailor: CallFn = async (input) => {
 
 const pipelines: Record<string, CallFn> = {
   'jd-analysis': (input) => callJdAnalysis(input),
+
+  'cv-analysis': (input) => callCvAnalysis(input),
 
   'match-scoring': (input) => callScore(input),
 
@@ -157,6 +169,7 @@ async function main(): Promise<void> {
 
   printResults(allResults);
   printSummaryTable(allResults);
+  writeSummaryJson(allResults);
 
   // Write results to file
   const resultsDir = join(__dirname, 'results');

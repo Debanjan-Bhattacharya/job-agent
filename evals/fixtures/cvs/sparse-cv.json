@@ -1,0 +1,37 @@
+{
+  "name": "Amit Kumar",
+  "email": "amit.kumar@gmail.com",
+  "phone": "+919988776655",
+  "location": "Delhi, India",
+  "summary": "",
+  "total_years_experience": 3,
+  "experience_tier": "mid",
+  "experience_tier_override": null,
+  "skills": ["MS Office", "Communication", "Teamwork"],
+  "experience": [
+    {
+      "title": "Business Development Executive",
+      "company": "Startup XYZ",
+      "industry": "SaaS",
+      "start": "2023-01",
+      "end": null,
+      "bullets": ["Handled client calls", "Managed accounts", "Worked with team on targets"]
+    },
+    {
+      "title": "Sales Executive",
+      "company": "ABC Corp",
+      "industry": "FMCG",
+      "start": "2021-06",
+      "end": "2022-12",
+      "bullets": ["Met sales targets", "Visited clients"]
+    }
+  ],
+  "education": [
+    {
+      "degree": "BBA",
+      "institution": "Delhi University",
+      "year": 2021
+    }
+  ],
+  "achievements": []
+}

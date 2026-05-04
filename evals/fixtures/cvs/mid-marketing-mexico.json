@@ -1,0 +1,62 @@
+ {
+    "name": "Valentina Ríos Castillo",
+    "email": "vrios.castillo@correo.mx",
+    "phone": "+52 55 3812 9047",
+    "location": "Mexico City, Mexico",
+    "summary": "Creative marketing professional with 6 years of experience in brand management and digital campaigns for consumer lifestyle and fashion brands across Latin America. Comfortable operating in fast-paced agency and in-house environments.",
+    "total_years_experience": 6,
+    "experience_tier": "mid",
+    "experience_tier_override": null,
+    "skills": ["Brand Strategy", "Social Media Marketing", "Content Creation", "Google Ads", "Meta Ads Manager", "Adobe Photoshop", "Canva", "Influencer Marketing", "Spanish (Native)", "English (Professional)", "Email Marketing (Mailchimp)", "Google Analytics"],
+    "experience": [
+      {
+        "title": "Marketing Assistant",
+        "company": "Agencia Creativa Lumbre",
+        "industry": "Marketing & Advertising Agency",
+        "start": "2018-08",
+        "end": "2020-01",
+        "bullets": [
+          "Supported account managers on campaigns for 7 consumer brand clients including fashion, beauty, and food verticals.",
+          "Created social media content calendars and copy for Instagram and Facebook across 4 client accounts.",
+          "Helped coordinate a product launch event that generated 1,200 in-person attendees and 340K impressions on social media."
+        ]
+      },
+      {
+        "title": "Brand Executive",
+        "company": "Terramar Fashion Group",
+        "industry": "Fashion Retail",
+        "start": "2020-03",
+        "end": "2021-02",
+        "bullets": [
+          "Managed day-to-day brand communications for a mid-range women's clothing label across Mexico and Colombia.",
+          "Ran paid social campaigns on Meta with a monthly budget of MXN 120,000.",
+          "Left role due to company restructuring and brand discontinuation."
+        ]
+      },
+      {
+        "title": "Digital Marketing Manager",
+        "company": "Kasa Living (D2C Home & Lifestyle Brand)",
+        "industry": "E-commerce / Consumer Goods",
+        "start": "2021-09",
+        "end": null,
+        "bullets": [
+          "Owning digital marketing strategy and execution for a DTC brand with MXN 48M annual online revenue.",
+          "Scaled Instagram following from 22,000 to 91,000 in 14 months through organic content and influencer partnerships.",
+          "Reduced customer acquisition cost (CAC) by 31% by reallocating budget from broad Meta campaigns to retargeting and email flows.",
+          "Managed a roster of 14 micro-influencers (50K–200K followers), negotiating contracts and tracking ROI per partnership.",
+          "Launched brand into Colombian and Chilean markets — combined first-year revenue of MXN 6.2M."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "Licenciatura en Comunicación y Marketing",
+        "institution": "Universidad Iberoamericana, Ciudad de México",
+        "year": 2018
+      }
+    ],
+    "achievements": [
+      "Effie México Awards — Shortlisted, Best Digital Campaign (SME Category), 2023",
+      "Certified in Google Ads Search and Meta Blueprint (2022)"
+    ]
+  }

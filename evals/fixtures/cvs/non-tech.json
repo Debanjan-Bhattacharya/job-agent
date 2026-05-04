@@ -1,0 +1,37 @@
+{
+  "name": "Kavya Nair",
+  "email": "kavya.nair@gmail.com",
+  "phone": "+917766554433",
+  "location": "Chennai, India",
+  "summary": "6 years in retail operations and store management across premium lifestyle brands.",
+  "total_years_experience": 6,
+  "experience_tier": "mid",
+  "experience_tier_override": null,
+  "skills": ["Store Operations", "Team Management", "Visual Merchandising", "Inventory Management", "Customer Experience", "CRM"],
+  "experience": [
+    {
+      "title": "Store Manager",
+      "company": "Forest Essentials",
+      "industry": "Luxury Retail",
+      "start": "2022-03",
+      "end": null,
+      "bullets": ["Managed store P&L of ₹2.4Cr monthly revenue", "Led team of 12 across sales, operations, and visual merchandising", "Improved NPS from 67 to 84 over 18 months", "Reduced shrinkage by 22% through inventory control processes"]
+    },
+    {
+      "title": "Assistant Store Manager",
+      "company": "Nykaa",
+      "industry": "Beauty Retail",
+      "start": "2019-06",
+      "end": "2022-02",
+      "bullets": ["Supported ₹1.2Cr monthly revenue store", "Trained 8 new sales associates", "Implemented new stock replenishment system reducing stockouts by 35%"]
+    }
+  ],
+  "education": [
+    {
+      "degree": "BBA Retail Management",
+      "institution": "Christ University Bangalore",
+      "year": 2019
+    }
+  ],
+  "achievements": ["Top Store Manager award 2023 across Forest Essentials India network", "Launched 2 successful in-store events with 200+ attendees each"]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Rahul Mehta",
+  "email": "rahul.mehta@gmail.com",
+  "phone": "+919123456789",
+  "location": "Mumbai, India",
+  "summary": "8 years in investment banking and financial analysis, transitioning to product management.",
+  "total_years_experience": 8,
+  "experience_tier": "mid",
+  "experience_tier_override": null,
+  "skills": ["Financial Modelling", "Excel", "SQL", "PowerPoint", "Stakeholder Management", "Data Analysis"],
+  "experience": [
+    {
+      "title": "Senior Analyst",
+      "company": "Goldman Sachs",
+      "industry": "Investment Banking",
+      "start": "2021-07",
+      "end": "2025-06",
+      "bullets": ["Built financial models for 12 M&A transactions totalling $2.4B", "Led cross-functional teams of 6 across due diligence workstreams", "Reduced report generation time by 40% through Excel automation"]
+    },
+    {
+      "title": "Analyst",
+      "company": "HDFC Bank",
+      "industry": "Banking",
+      "start": "2017-06",
+      "end": "2021-06",
+      "bullets": ["Analysed credit risk for SME portfolio of 500+ clients", "Built dashboards tracking ₹800Cr loan book performance", "Managed stakeholder reporting for senior leadership"]
+    }
+  ],
+  "education": [
+    {
+      "degree": "MBA Finance",
+      "institution": "IIM Calcutta",
+      "year": 2017
+    },
+    {
+      "degree": "B.Com",
+      "institution": "St. Xavier's College Mumbai",
+      "year": 2015
+    }
+  ],
+  "achievements": ["Promoted to Senior Analyst in 2 years vs typical 3", "Led team that closed largest SME deal in HDFC branch history"]
+}

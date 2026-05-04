@@ -1,0 +1,59 @@
+{
+    "name": "Rachel Donovan",
+    "email": "rachel.donovan@northstarcareers.com",
+    "phone": "+1-415-773-2219",
+    "location": "Austin, Texas, USA",
+    "summary": "Senior UX designer specializing in consumer mobile products and accessibility-focused design systems.",
+    "total_years_experience": 13,
+    "experience_tier": "senior",
+    "experience_tier_override": null,
+    "skills": ["UX Design", "Figma", "Design Systems", "User Research", "Accessibility", "Interaction Design"],
+    "experience": [
+      {
+        "title": "UX Designer",
+        "company": "BlueOrbit Interactive",
+        "industry": "Digital Product Design",
+        "start": "2012-07",
+        "end": "2016-03",
+        "bullets": [
+          "Designed mobile interfaces for startup clients",
+          "Conducted usability testing sessions",
+          "Collaborated closely with engineering teams"
+        ]
+      },
+      {
+        "title": "Senior UX Designer",
+        "company": "Nimbus Mobile Labs",
+        "industry": "Consumer Mobile Apps",
+        "start": "2016-05",
+        "end": "2021-06",
+        "bullets": [
+          "Redesigned flagship app improving retention by 27%",
+          "Led accessibility initiative achieving WCAG AA compliance",
+          "Mentored junior designers"
+        ]
+      },
+      {
+        "title": "Principal Product Designer",
+        "company": "EverPath Technologies",
+        "industry": "HealthTech",
+        "start": "2021-09",
+        "end": null,
+        "bullets": [
+          "Built company-wide design system reducing development cycles by 35%",
+          "Led cross-functional design strategy across 4 product lines",
+          "Improved onboarding completion rate from 58% to 81%"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "BA in Graphic Design",
+        "institution": "Western Lakes University",
+        "year": 2012
+      }
+    ],
+    "achievements": [
+      "UX Design Award finalist at Product Experience Summit 2023"
+    ]
+}

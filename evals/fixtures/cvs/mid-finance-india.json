@@ -1,0 +1,52 @@
+{
+  "name": "Rahul Verma",
+  "email": "rahul.verma@gmail.com",
+  "phone": "+919012345678",
+  "location": "Delhi, India",
+  "summary": "5 years in corporate finance and M&A advisory at leading Indian professional services firms. No legal background.",
+  "total_years_experience": 5,
+  "experience_tier": "mid",
+  "experience_tier_override": null,
+  "skills": ["Financial Analysis", "Valuation", "Excel", "PowerPoint", "Due Diligence", "Client Advisory"],
+  "experience": [
+    {
+      "title": "Finance Manager",
+      "company": "Deloitte India",
+      "industry": "Professional Services",
+      "start": "2022-08",
+      "end": "2025-06",
+      "bullets": [
+        "Led financial due diligence for 8 M&A transactions across pharma and tech sectors",
+        "Prepared valuation models for assets totalling ₹1,200Cr",
+        "Managed client relationships across 4 active engagements simultaneously"
+      ]
+    },
+    {
+      "title": "Financial Analyst",
+      "company": "ICICI Securities",
+      "industry": "Investment Banking",
+      "start": "2020-07",
+      "end": "2022-07",
+      "bullets": [
+        "Built DCF and comparable company models for equity research coverage",
+        "Contributed to 3 IPO pitchbooks generating ₹400Cr in mandates"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "MBA Finance",
+      "institution": "FMS Delhi",
+      "year": 2020
+    },
+    {
+      "degree": "B.Com",
+      "institution": "Shri Ram College of Commerce",
+      "year": 2018
+    }
+  ],
+  "achievements": [
+    "Promoted to Finance Manager in 18 months vs typical 30",
+    "CFA Level II cleared"
+  ]
+}

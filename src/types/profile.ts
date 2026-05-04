@@ -1,8 +1,3 @@
-export interface Skill {
-  name: string;
-  years: number;
-}
-
 export interface WorkExperience {
   title: string;
   company: string;
@@ -26,10 +21,11 @@ export interface ParsedProfile {
   total_years_experience: number;
   experience_tier: string;
   experience_tier_override: string | null;
-  skills: Skill[];
+  summary?: string
   experience: WorkExperience[];
   education: Education[];
   achievements: string[];
+  skills: string[];
   work_arrangement_preference?: 'wfh' | 'wfo' | 'hybrid' | 'any';
   work_arrangement_hard_filter?: boolean;
   career_break?: {

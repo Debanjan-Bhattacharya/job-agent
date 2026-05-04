@@ -1,0 +1,42 @@
+{
+    "name": "Arjun Das",
+    "email": "a.das.tech92@example.in",
+    "phone": "+91 98765 43210",
+    "location": "Bengaluru, India",
+    "summary": "Full-stack developer with a passion for building scalable web applications. Quick learner and team player.",
+    "total_years_experience": 1,
+    "experience_tier": "grad",
+    "experience_tier_override": null,
+    "skills": [
+      "JavaScript",
+      "React",
+      "Node.js",
+      "MongoDB",
+      "CSS",
+      "Git"
+    ],
+    "experience": [
+      {
+        "title": "Junior Software Engineer",
+        "company": "NexaSoft Solutions",
+        "industry": "Information Technology",
+        "start": "2023-06",
+        "end": null,
+        "bullets": [
+          "Assisted in the development of a customer dashboard using React.",
+          "Fixed bugs and improved front-end performance by 15%.",
+          "Participated in daily stand-up meetings and code reviews."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.Tech in Computer Science",
+        "institution": "Indian Institute of Information Technology",
+        "year": 2023
+      }
+    ],
+    "achievements": [
+      "Hackathon Runner-up 2022"
+    ]
+}

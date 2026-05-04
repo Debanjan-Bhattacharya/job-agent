@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { supabase } from '@/lib/supabase';
-import type { ParsedProfile, Skill, WorkExperience, Education } from '@/types/profile';
+import type { ParsedProfile, WorkExperience, Education } from '@/types/profile';
 
 interface Props {
   profile: ParsedProfile;
@@ -28,15 +28,15 @@ export default function ProfileCard({ profile, rawText }: Props) {
   }
 
   // ── skills ───────────────────────────────────────────────────────────────
-  function updateSkill(i: number, field: keyof Skill, value: string | number) {
+  function updateSkill(i: number, value: string) {
     setEdited(prev => {
       const skills = [...prev.skills];
-      skills[i] = { ...skills[i], [field]: value };
+      skills[i] = value;
       return { ...prev, skills };
     });
   }
   function addSkill() {
-    setEdited(prev => ({ ...prev, skills: [...prev.skills, { name: '', years: 0 }] }));
+    setEdited(prev => ({ ...prev, skills: [...prev.skills, ''] }));
   }
   function removeSkill(i: number) {
     setEdited(prev => ({ ...prev, skills: prev.skills.filter((_, idx) => idx !== i) }));
@@ -246,16 +246,8 @@ export default function ProfileCard({ profile, rawText }: Props) {
                 <input
                   className={`${inputCls} flex-1`}
                   placeholder="Skill"
-                  value={skill.name}
-                  onChange={e => updateSkill(i, 'name', e.target.value)}
-                />
-                <input
-                  type="number"
-                  min={0}
-                  className={`${inputCls} w-20`}
-                  placeholder="yrs"
-                  value={skill.years}
-                  onChange={e => updateSkill(i, 'years', parseInt(e.target.value) || 0)}
+                  value={skill}
+                  onChange={e => updateSkill(i, e.target.value)}
                 />
                 <button onClick={() => removeSkill(i)} className="text-red-400 hover:text-red-600 text-sm px-1">✕</button>
               </div>
@@ -266,8 +258,7 @@ export default function ProfileCard({ profile, rawText }: Props) {
           <div className="flex flex-wrap gap-2">
             {p.skills.map((skill, i) => (
               <span key={i} className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">
-                {skill.name}
-                {skill.years > 0 && <span className="text-gray-400 ml-1">{skill.years}y</span>}
+                {skill}
               </span>
             ))}
           </div>

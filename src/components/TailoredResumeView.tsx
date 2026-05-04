@@ -11,17 +11,10 @@ interface TailoredRole {
   company: string;
   title: string;
   period: string;
-  original_description: string;
+  original_bullets: string[];
   tailored_bullets: string[];
   changes_made: string[];
   quantification_prompts: string[];
-}
-
-interface TailoredSkillsSection {
-  original_skills: string[];
-  tailored_skills: string[];
-  deprioritised_skills: string[];
-  changes_made: string[];
 }
 
 interface TailoredSummarySection {
@@ -53,7 +46,7 @@ interface TailoringOutput {
     cannot_cover_by_tailoring: string[];
   };
   tailored_experience: TailoredRole[];
-  tailored_skills: TailoredSkillsSection | string[];
+  tailored_skills: string[];
   tailored_summary: TailoredSummarySection;
   gap_questions: GapQuestion[];
   pre_apply_flags: PreApplyFlag[];
@@ -80,23 +73,6 @@ interface TailoredResumeViewProps {
   onReTailor: (context: Record<string, string>) => void;
 }
 
-// --- helpers ---
-
-function resolveSkills(raw: unknown): TailoredSkillsSection {
-  if (Array.isArray(raw)) {
-    return {
-      tailored_skills: raw as string[],
-      original_skills: [],
-      deprioritised_skills: [],
-      changes_made: [],
-    };
-  }
-  if (raw && typeof raw === 'object') {
-    return raw as TailoredSkillsSection;
-  }
-  return { tailored_skills: [], original_skills: [], deprioritised_skills: [], changes_made: [] };
-}
-
 // --- component ---
 
 export default function TailoredResumeView({
@@ -114,7 +90,6 @@ export default function TailoredResumeView({
 
   const output = tailoredOutput as unknown as TailoringOutput;
   const validation = validationResult as unknown as ValidationResult;
-  const skillsData = resolveSkills(output.tailored_skills);
 
   const blockingFlags = (output.pre_apply_flags ?? []).filter((f) => f.severity === 'blocking');
   const advisoryFlags = (output.pre_apply_flags ?? []).filter((f) => f.severity === 'advisory');
@@ -282,9 +257,14 @@ export default function TailoredResumeView({
                     <div className="text-xs font-semibold text-gray-400 uppercase mb-2">
                       Original
                     </div>
-                    <p className="text-xs text-gray-500 whitespace-pre-wrap leading-relaxed">
-                      {role.original_description}
-                    </p>
+                    <ul className="space-y-1.5">
+                      {role.original_bullets?.map((b, j) => (
+                        <li key={j} className="text-xs text-gray-500 flex items-start gap-1.5">
+                          <span className="text-gray-400 mt-0.5 shrink-0">•</span>
+                          {typeof b === 'string' ? b : JSON.stringify(b)}
+                      </li>
+                     ))}
+                    </ul>
                   </div>
                   <div>
                     <div className="text-xs font-semibold text-gray-700 uppercase mb-2">
@@ -343,56 +323,18 @@ export default function TailoredResumeView({
       )}
 
       {/* Tailored skills */}
-      {(skillsData.tailored_skills?.length > 0 || skillsData.deprioritised_skills?.length > 0) && (
+      {output.tailored_skills?.length > 0 && (
         <div className="space-y-2">
           <h3 className="font-semibold text-gray-800">Tailored skills</h3>
-          <div className="p-4 border border-gray-200 rounded-lg space-y-3">
-            {skillsData.tailored_skills?.length > 0 && (
-              <div>
-                <div className="text-xs font-semibold text-gray-500 uppercase mb-1.5">
-                  Prioritised
-                </div>
-                <div className="flex flex-wrap gap-1.5">
-                  {skillsData.tailored_skills.map((s, i) => (
-                    <span
-                      key={i}
-                      className="text-xs px-2 py-1 bg-blue-50 text-blue-700 rounded-full border border-blue-100"
-                    >
-                      {typeof s === 'string' ? s : JSON.stringify(s)}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )}
-            {skillsData.deprioritised_skills?.length > 0 && (
-              <div>
-                <div className="text-xs font-semibold text-gray-400 uppercase mb-1.5">
-                  Deprioritised
-                </div>
-                <div className="flex flex-wrap gap-1.5">
-                  {skillsData.deprioritised_skills.map((s, i) => (
-                    <span
-                      key={i}
-                      className="text-xs px-2 py-1 bg-gray-50 text-gray-400 rounded-full border border-gray-200"
-                    >
-                      {typeof s === 'string' ? s : JSON.stringify(s)}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )}
-            {skillsData.changes_made?.length > 0 && (
-              <div className="flex flex-wrap gap-1 pt-1">
-                {skillsData.changes_made.map((c, i) => (
-                  <span
-                    key={i}
-                    className="text-xs px-2 py-0.5 bg-indigo-50 text-indigo-600 rounded-full border border-indigo-100"
-                  >
-                    {typeof c === 'string' ? c : JSON.stringify(c)}
-                  </span>
-                ))}
-              </div>
-            )}
+          <div className="flex flex-wrap gap-1.5 p-4 border border-gray-200 rounded-lg">
+            {output.tailored_skills.map((s, i) => (
+              <span
+                key={i}
+                className="text-xs px-2 py-1 bg-blue-50 text-blue-700 rounded-full border border-blue-100"
+              >
+                {s}
+              </span>
+            ))}
           </div>
         </div>
       )}

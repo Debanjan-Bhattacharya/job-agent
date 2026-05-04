@@ -23,6 +23,8 @@ export default function Home() {
   const [validationResult, setValidationResult] = useState<Record<string, unknown> | null>(null);
   const [tailoring, setTailoring] = useState(false);
   const [tailoringStatus, setTailoringStatus] = useState('');
+  const [coverLetter, setCoverLetter] = useState<string | null>(null);
+const [coverLetterLoading, setCoverLetterLoading] = useState(false);
   const [candidateSuppliedContext, setCandidateSuppliedContext] = useState<
     Record<string, string>
   >({});
@@ -136,6 +138,28 @@ export default function Home() {
 
   const isMatch = result?.response_type === 'match';
 
+  const handleGenerateCoverLetter = async () => {
+  if (!profile || !result?.jd_analysis || !tailoredOutput) return;
+  setCoverLetterLoading(true);
+  try {
+    const res = await fetch('/api/cover-letter', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        candidate_profile: profile,
+        jd_analysis: result.jd_analysis,
+        tailored_output: tailoredOutput,
+      }),
+    });
+    const data = await res.json();
+    setCoverLetter(data.cover_letter);
+  } catch (e) {
+    console.error('Cover letter error:', e);
+  } finally {
+    setCoverLetterLoading(false);
+  }
+};
+
   return (
     <main className="min-h-screen bg-gray-50 flex flex-col items-center py-16 px-4">
       <div className="w-full max-w-2xl space-y-10">
@@ -215,6 +239,28 @@ export default function Home() {
                 candidateSuppliedContext={candidateSuppliedContext}
                 onReTailor={handleReTailor}
               />
+            </div>
+          )}
+          {/* Cover letter */}
+          {tailoredOutput && (
+            <div className="space-y-4">
+              <button
+                onClick={handleGenerateCoverLetter}
+                disabled={coverLetterLoading}
+                className="w-full py-2 bg-green-600 text-white text-sm font-semibold rounded-lg hover:bg-green-700 transition-colors disabled:opacity-50"
+              >
+                {coverLetterLoading ? 'Generating Cover Letter...' : 'Generate Cover Letter'}
+              </button>
+              {coverLetter && (
+                <div className="space-y-2">
+                  <h2 className="text-lg font-semibold text-gray-800">Cover Letter</h2>
+                  <textarea
+                    className="w-full h-96 p-4 text-sm border border-gray-200 rounded-lg text-gray-800 bg-white resize-none"
+                    value={coverLetter}
+                    readOnly
+                  />
+                </div>
+              )}
             </div>
           )}
         </section>
