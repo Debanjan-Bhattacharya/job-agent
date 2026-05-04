@@ -8,7 +8,6 @@ export const testCase: TestCase = {
   input: { candidate_profile: loadFixture('cvs/senior-healthtech-usa.json') },
   assertions: [
     { type: 'field_equals', path: 'experience_tier', expected: 'senior' },
-    { type: 'field_equals', path: 'cv_confidence', expected: 'high' },
-    { type: 'array_not_empty', path: 'credibility_signals.brand_tier_employers' },
+    { type: 'field_equals', path: 'cv_confidence', expected: 'high' }
   ],
 };

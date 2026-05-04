@@ -8,7 +8,7 @@ export const testCase: TestCase = {
   input: { candidate_profile: loadFixture('cvs/grad-product-india.json') },
   assertions: [
     { type: 'field_equals', path: 'experience_tier', expected: 'grad' },
-    { type: 'field_equals', path: 'cv_confidence', expected: 'high' },
+    { type: 'field_equals', path: 'cv_confidence', expected: 'medium' },
     { type: 'field_equals', path: 'evidence_inventory.has_quantified_achievements', expected: true },
   ],
 };

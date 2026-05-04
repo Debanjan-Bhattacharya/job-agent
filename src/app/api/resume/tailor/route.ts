@@ -53,7 +53,13 @@ export async function POST(req: NextRequest) {
     const message = await anthropic.messages.create({
       model: 'claude-sonnet-4-6',
       max_tokens: 16384,
-      system: tailorPrompt,
+      system: [
+        {
+          type: "text",
+          text: prompt,
+          cache_control: { type: "ephemeral" }
+        }
+      ],
       messages: [
         {
           role: 'user',

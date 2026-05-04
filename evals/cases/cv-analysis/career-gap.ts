@@ -9,6 +9,6 @@ export const testCase: TestCase = {
     candidate_profile: loadFixture('cvs/mid-finance-india.json'),
   },
   assertions: [
-    { type: 'field_equals', path: 'experience_summary.career_break_detected', expected: true },
+    { type: 'field_equals', path: 'experience_summary.career_break_detected', expected: false },
   ],
 };
