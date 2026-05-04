@@ -111,6 +111,7 @@ Context (C) — relevance of setting:
 - 80-100: same industry, same function, direct competitor company
 - 60-79: adjacent industry or related function
 - 30-59: different industry, transferable function
+- Context score should reflect transferability of skills and experience, not just exact domain match. Adjacent domains with significant skill overlap should score 40-60 on context, not 0-20. Operational, leadership, analytical, and cross-functional skills transfer across related domains. A candidate with deep experience in an adjacent domain is not a zero-context match.
 - 10-29: unrelated industry and function
 - 0: no applicable context
 

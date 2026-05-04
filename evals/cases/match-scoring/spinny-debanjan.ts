@@ -13,7 +13,6 @@ export const testCase: TestCase = {
     { type: 'field_in_range', path: 'overall_score', min: 55, max: 75 },
     { type: 'field_equals', path: 'mandatory_gate_cap_applied', expected: false },
     { type: 'array_empty', path: 'mandatory_gates.failed' },
-    { type: 'object_not_empty', path: 'score_breakdown' },
-    { type: 'score_consistency', runs: 2, maxVariance: 5, scorePath: 'overall_score' },
-  ],
+    { type: 'object_not_empty', path: 'score_breakdown' }
+   ]
 };

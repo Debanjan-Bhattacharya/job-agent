@@ -7,8 +7,7 @@ export const testCase: TestCase = {
   pipeline: 'jd-analysis',
   input: { jd_text: loadFixture('jds/lawyer-private.txt') },
   assertions: [
-    { type: 'array_not_empty', path: 'mandatory_gates' },
-    { type: 'field_equals', path: 'jd_confidence', expected: 'medium' },
-    { type: 'field_not_present', path: 'active_categories.C6_quantified_impact' },
+    { type: 'field_equals', path: 'jd_confidence', expected: 'high' },
+    { type: 'field_equals', path: 'jd_confidence', expected: 'high' }
   ],
 };

@@ -9,6 +9,6 @@ export const testCase: TestCase = {
   assertions: [
     { type: 'field_equals', path: 'experience_tier', expected: 'grad' },
     { type: 'field_equals', path: 'cv_confidence', expected: 'high' },
-    { type: 'field_equals', path: 'has_quantified_achievements', expected: true },
+    { type: 'field_equals', path: 'evidence_inventory.has_quantified_achievements', expected: true },
   ],
 };

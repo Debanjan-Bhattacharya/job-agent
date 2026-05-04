@@ -128,6 +128,7 @@ Classify the ROLE type's core knowledge depreciation rate — not the technology
 - 2-5yr: product manager (any domain — mobile, web, field ops, internal tools), data analyst, digital marketer, SaaS sales
 - 5-10yr: finance, operations, HR, traditional sales, supply chain, enterprise ERP/financial systems (Workday, SAP, Oracle Financials, PeopleSoft)
 - 10+yr: law, medicine, accounting principles, civil/structural engineering, nutrition science
+- Critical disambiguation: when the role's function is to USE, CONFIGURE, or ADMINISTER an enterprise system, classify as 5-10yr — the knowledge domain is finance/accounting/operations. Only classify as <2yr or 2-5yr if the role is BUILDING or ENGINEERING the software itself. Sustainability, ESG, and CSR roles: classify as 5-10yr. Core knowledge (carbon accounting, BRSR, GRI, SDGs, circular economy) is stable domain expertise, not fast-moving technology.
 
 Critical rule: a Product Manager role is always 2-5yr, regardless of what product they manage (mobile app, inspector tool, SaaS platform, or AI product). Do not use <2yr for PM roles.
 
@@ -156,22 +157,18 @@ A mandatory gate is a requirement where absence makes the candidate fundamentall
 NEVER classify as mandatory_gate when JD uses: 'preferred', 'preferred candidate', 'ideal candidate', 'good to have', 'nice to have', 'a plus', 'advantage', 'desirable'.
 When JD says 'preferred': classify as preferred_requirement only. Add to preferred_requirements array. Never add to mandatory_gates.
 Self-check before classifying any gate: copy the exact phrase from the JD that justifies this classification. If you cannot find an explicit mandatory phrase, check if the inferred gate exception below applies before concluding there is no gate.
+When evaluating inferred mandatory gates for platform-ownership roles, look at the responsibilities section, not the qualifications section. If the responsibilities section shows the platform is the central operational subject of the role, the inferred gate applies regardless of how the qualifications section labels related certifications.
+For roles in regulated professions, the qualifying licence or degree is always a mandatory gate even if not explicitly stated in the JD, because the role cannot be performed without it. Regulated professions include: law (requires LLB/LLM/Bar admission), medicine (requires MBBS/MD), chartered accountancy (requires CA qualification), architecture (requires B.Arch licence). If the JD role title clearly indicates a regulated profession, add the relevant qualification as a mandatory gate with source: 'inferred'.
+When checking for regulated profession inferred gates, scan the entire JD including role metadata at the bottom (Role:, Industry Type:, Role Category: fields). The role title in these metadata fields is equally valid as a signal for inferred mandatory gates as the job title at the top.
 
 **Inferred mandatory gate exception — platform-ownership roles:**
-When the role's PRIMARY function is to manage, administer, configure, or act as subject matter expert (SME) for a specific named enterprise platform or software (e.g. "Manage and maintain the Workday Accounting Hub setup", "act as Salesforce admin", "own the SAP FICO module"), proficiency in that platform is an inferred mandatory gate even if not explicitly marked 'required'. Rationale: the platform IS the job — a candidate who cannot use it cannot perform the role at all. Set "source": "inferred" for these gates.
+When the role's PRIMARY function is to manage, administer, configure, or act as subject matter expert (SME) for a specific named enterprise platform or software, proficiency in that platform is an inferred mandatory gate even if not explicitly marked 'required'. Rationale: the platform IS the job — a candidate who cannot use it cannot perform the role at all. Set 'source': 'inferred' for these gates.
 This exception applies ONLY when the named platform is the central operational subject of the role, NOT when it is one tool among many.
+For regulated professions, scan the entire JD including role metadata fields at the bottom (Role:, Industry Type:, Role Category:) — the role title in metadata is equally valid as a signal for inferred mandatory gates as the title at the top of the JD.
 
 Example WRONG: '[qualification] from [institution type] preferred' → mandatory gate
 Example CORRECT: '[qualification] from [institution type] preferred' → preferred_requirement only
 Example CORRECT: '[qualification] required' → mandatory gate
-Example CORRECT: Role is "Workday Accounting Hub SME — manage and maintain WAH setup" → Workday Accounting Hub proficiency is an inferred mandatory gate
-
-Examples:
-- "CA qualified" for a finance controller role
-- "LLB degree" for a legal role
-- "Workday certification" explicitly listed as required
-- "Medical device Class II experience required"
-- Workday Accounting Hub proficiency for a role whose entire function is managing/configuring WAH (inferred)
 
 List each gate as:
 {
@@ -215,9 +212,10 @@ If not stated: leave as defaults (0/empty/false).
 
 work_arrangement classification:
 - wfh: JD contains 'fully remote', 'work from home', 'remote only', or similar
-- wfo: JD contains 'on-site', 'work from office', OR has a Location field listing physical cities with no remote/WFH language. Example: "Location: Noida / Bangalore / Pune" → wfo. Example: "Location: Mumbai" → wfo. A Location field with city names and no remote language MUST be classified as wfo, not unspecified.
+- wfo: JD contains 'on-site', 'work from office', OR has a Location field listing physical cities with no remote/WFH language AND the role is clearly field-based, retail, operations, or hospitality. For office-based roles (product management, engineering, finance, marketing) where hybrid is common, classify as unspecified if no explicit work arrangement language is present.
 - hybrid: JD contains 'hybrid', states partial office days, or uses 'flexible working'
 - unspecified: no Location field and no work arrangement language anywhere in the JD. NEVER use unspecified when a Location field naming cities is present — that is wfo.
+- For retail, hospitality, healthcare, and facility management roles: if the JD mentions a specific store, branch, hospital, or physical location as the place of work, classify as wfo even if the words 'work from office' or 'on-site' are not used. Physical presence is implied by the nature of these roles.
 
 ### Signals Array
 For each active category, list signals as concise strings extracted from JD.

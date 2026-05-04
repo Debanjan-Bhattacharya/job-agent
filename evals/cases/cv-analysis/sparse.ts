@@ -9,6 +9,6 @@ export const testCase: TestCase = {
   assertions: [
     { type: 'field_equals', path: 'cv_confidence', expected: 'low' },
     { type: 'array_not_empty', path: 'cv_gaps' },
-    { type: 'field_equals', path: 'career_trajectory', expected: 'unclear' },
+    { type: 'field_equals', path: 'experience_summary.career_trajectory', expected: 'unclear' },
   ],
 };

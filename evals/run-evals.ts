@@ -69,7 +69,11 @@ const pipelines: Record<string, CallFn> = {
 
   'cv-analysis': (input) => callCvAnalysis(input),
 
-  'match-scoring': (input) => callScore(input),
+  'match-scoring': async (input) => {
+    const result = await callScore(input);
+    console.log('[match-scoring] raw API response:', JSON.stringify(result, null, 2));
+    return result;
+  },
 
   tailoring: async (input) => {
     // Step 1: get jd_analysis, cv_analysis, and match scoring from score route

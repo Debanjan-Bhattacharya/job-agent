@@ -167,3 +167,8 @@ create table tailored_resumes (
 - Free LLMs are for: generating test data, boilerplate files, JSON fixtures, eval case templates, documentation drafts
 - Before giving any task to CC or Build Engine, ask: can a free LLM do this with a good prompt? If yes, write the prompt and use that instead
 - One formal CC checkpoint per build session — batch all CC tasks together rather than one at a time
+
+---
+
+## Eval Process
+Three failure categories: Prompt fix / Eval fix / Park. Max 2 prompt iterations per failure then park. Pass rate targets: POC 60%, first users 75%, launch 85%. Run cheap pipelines for iteration. Full suite sparingly — costs ~$2/run.

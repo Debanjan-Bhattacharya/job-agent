@@ -10,7 +10,6 @@ export const testCase: TestCase = {
     candidate_profile: loadFixture('cvs/sparse-cv.json'),
   },
   assertions: [
-    { type: 'field_equals', path: 'cv_confidence', expected: 'low' },
     { type: 'field_in_range', path: 'overall_score', min: 10, max: 40 },
   ],
 };

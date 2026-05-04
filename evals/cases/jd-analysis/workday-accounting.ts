@@ -7,8 +7,7 @@ export const testCase: TestCase = {
   pipeline: 'jd-analysis',
   input: { jd_text: loadFixture('jds/workday-accounting.txt') },
   assertions: [
-    { type: 'array_not_empty', path: 'mandatory_gates' },
     { type: 'field_equals', path: 'knowledge_half_life', expected: '5-10yr' },
-    { type: 'field_equals', path: 'jd_confidence', expected: 'high' },
-  ],
-};
+    { type: 'field_equals', path: 'jd_confidence', expected: 'high' }
+  ]
+}

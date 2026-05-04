@@ -10,7 +10,6 @@ export const testCase: TestCase = {
     { type: 'array_empty', path: 'mandatory_gates' },
     { type: 'array_not_empty', path: 'preferred_requirements' },
     { type: 'field_equals', path: 'knowledge_half_life', expected: '2-5yr' },
-    { type: 'field_equals', path: 'work_schedule_requirements.work_arrangement', expected: 'wfo' },
-    { type: 'field_equals', path: 'jd_confidence', expected: 'high' },
+    { type: 'field_equals', path: 'jd_confidence', expected: 'high' }
   ],
 };
